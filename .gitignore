@@ -1,0 +1,12 @@
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+_scratch/
+
+# Site notes stay local: the brief carries the Cloudpeer approval list, the
+# copyright boundary discussion and personal notes that have no business on a
+# public repo.
+BRIEF.md

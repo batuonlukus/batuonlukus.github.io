@@ -1,0 +1,1352 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Batu Önlükuş · Data Science</title>
+  <meta name="description" content="Batu Önlükuş is an AI and Data Engineering student at Özyeğin University working across machine learning, data science and blockchain, currently at Cloudpeer on the imza.io platform.">
+  <meta name="theme-color" content="#d9e4d5">
+  <link rel="canonical" href="https://batuonlukus.github.io/">
+  <link rel="alternate" hreflang="en" href="https://batuonlukus.github.io/?lang=en">
+  <link rel="alternate" hreflang="tr" href="https://batuonlukus.github.io/?lang=tr">
+  <link rel="alternate" hreflang="x-default" href="https://batuonlukus.github.io/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://batuonlukus.github.io/">
+  <meta property="og:title" content="Batu Önlükuş · Data Science">
+  <meta property="og:description" content="AI and Data Engineering student at Özyeğin University. Machine learning, data science and blockchain, currently at Cloudpeer on imza.io.">
+  <meta property="og:image" content="https://batuonlukus.github.io/images/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Batu Önlükuş, machine learning, data science and blockchain.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://batuonlukus.github.io/images/og-card.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://batuonlukus.github.io/#profile",
+    "url": "https://batuonlukus.github.io/",
+    "name": "Batu Önlükuş",
+    "inLanguage": ["en", "tr"],
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://batuonlukus.github.io/#person",
+      "name": "Batu Önlükuş",
+      "url": "https://batuonlukus.github.io/",
+      "image": [
+        "https://batuonlukus.github.io/images/portrait-1.jpg",
+        "https://batuonlukus.github.io/images/portrait-2.jpg",
+        "https://batuonlukus.github.io/images/portrait-3.jpg"
+      ],
+      "worksFor": { "@type": "Organization", "name": "Cloudpeer Global Teknoloji A.Ş." },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Özyeğin University" },
+      "knowsAbout": ["Machine learning", "Data science", "Blockchain", "Credit risk scoring", "Model monitoring", "Drift detection"],
+      "address": { "@type": "PostalAddress", "addressLocality": "Istanbul", "addressCountry": "TR" },
+      "sameAs": [
+        "https://github.com/batuonlukus",
+        "https://www.linkedin.com/in/batuonlukus/"
+      ]
+    }
+  }
+  </script>
+  <script>
+    (function () {
+      var q = new URLSearchParams(location.search).get('lang');
+      var saved = null;
+      try { saved = localStorage.getItem('lang'); } catch (e) {}
+      var nav = (navigator.language || 'en').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en';
+      var lang = (q === 'tr' || q === 'en') ? q : (saved === 'tr' || saved === 'en') ? saved : nav;
+      document.documentElement.lang = lang;
+      document.documentElement.setAttribute('data-lang', lang);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;1,400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500;1,6..96,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pad: #d9e4d5;
+      --pad-deep: #c5d6c0;
+      --sheet: #f6f5ef;
+      --sheet-hi: #fdfcf8;
+      --ink: #0f1519;
+      --muted: #55605c;
+      --redink: #a32b1e;
+      --brass: #c9962f;
+      --rule: rgba(15, 21, 25, .18);
+      --rule-soft: rgba(15, 21, 25, .09);
+      --display: "Bodoni Moda", Georgia, "Times New Roman", serif;
+      --sans: "Archivo", "Segoe UI", Arial, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", monospace;
+      --ruled: repeating-linear-gradient(to bottom, transparent 0 33px, rgba(15,21,25,.055) 33px 34px);
+      --gutter: clamp(1.15rem, 4.4vw, 5rem);
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--pad); scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--pad);
+      color: var(--ink);
+      font: 400 16px/1.6 var(--sans);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, p { margin-top: 0; }
+    a { color: inherit; }
+    img { max-width: 100%; }
+    :focus-visible { outline: 2px solid var(--redink); outline-offset: 3px; }
+
+    /* Two colours, no interior detail. A 30px cursor cannot hold a nib slit and
+       an ink dot without them smearing together, and fine strokes alias badly
+       once Windows display scaling rescales the image. Cream fill with a heavy
+       ink outline is the shape every OS cursor uses because it stays readable on
+       any background: pad, sheet, brass hover and the ink footer. One cursor for
+       the whole page, so nothing swaps as the pointer crosses elements. */
+    body, a, button, summary, [role="button"] { cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2228%22%20height%3D%2232%22%20viewBox%3D%220%200%2026%2030%22%3E%3Cpath%20d%3D%22M3%203%20L3%2023%20L8.4%2017.8%20L11.8%2026.6%20L15.8%2024.9%20L12.5%2016.5%20L20%2016.5%20Z%22%20fill%3D%22%23faf9f3%22%20stroke%3D%22%230f1519%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") 3 3, auto; }
+
+    /* ---------- the margin rule: ledger paper's red gutter line ----------
+       One line, not two. Sits in the page margin just left of where text
+       starts, the way a notebook rule does. */
+    .margin-rule { position: fixed; z-index: 5; top: 0; bottom: 0; left: clamp(.8rem, 2.9vw, 3.1rem); width: 1px; pointer-events: none; }
+    .margin-rule i {
+      position: absolute; inset: 0; display: block;
+      background: var(--redink); opacity: .55;
+      transform: scaleY(0); transform-origin: top;
+      animation: rule-draw .9s cubic-bezier(.2, .75, .25, 1) .15s forwards;
+    }
+    @keyframes rule-draw { to { transform: scaleY(1); } }
+
+    /* ---------- scrollbar, squared off to match everything else ---------- */
+    html { scrollbar-width: thin; scrollbar-color: var(--ink) var(--pad); }
+    ::-webkit-scrollbar { width: 13px; }
+    ::-webkit-scrollbar-track { background: var(--pad); border-left: 1px solid var(--rule); }
+    ::-webkit-scrollbar-thumb { background: var(--ink); border: 3px solid var(--pad); border-left-width: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--redink); }
+
+    .skip { position: fixed; z-index: 40; left: 12px; top: -60px; padding: .6rem .8rem; border: 1px solid var(--ink); background: var(--brass); color: var(--ink); font: 500 .7rem var(--mono); text-decoration: none; transition: top .18s ease; }
+    .skip:focus { top: 12px; }
+
+    /* ---------- header ---------- */
+    .site-header { position: fixed; z-index: 30; top: 0; left: 0; width: 100%; border-bottom: 1px solid transparent; transition: background .3s ease, border-color .3s ease, box-shadow .3s ease; }
+    .site-header.is-stuck { border-bottom-color: var(--ink); background: var(--ink); box-shadow: 0 5px 0 rgba(15, 21, 25, .16); }
+    .header-inner { display: flex; align-items: stretch; justify-content: space-between; gap: .75rem; min-height: 50px; max-width: 1560px; margin: auto; padding-left: var(--gutter); }
+    .brand { display: inline-flex; align-items: center; gap: .45rem; color: var(--sheet-hi); font: 500 1.2rem/1 var(--display); letter-spacing: -.01em; text-decoration: none; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .3s ease; }
+    .brand em { color: var(--brass); font-style: italic; }
+    .site-header.is-stuck .brand { opacity: 1; pointer-events: auto; }
+    .header-right { display: flex; align-items: stretch; }
+    .header-nav { display: flex; align-items: stretch; opacity: 0; pointer-events: none; transition: opacity .3s ease; }
+    .site-header.is-stuck .header-nav { opacity: 1; pointer-events: auto; }
+    .header-nav a { position: relative; display: inline-flex; align-items: center; padding: 0 clamp(.5rem, 1vw, .95rem); border-left: 1px solid rgba(246, 245, 239, .22); color: var(--sheet-hi); font: 500 .68rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background .18s ease, color .18s ease; }
+    .header-nav a:hover { background: var(--brass); color: var(--ink); }
+
+    .lang { display: flex; align-items: center; align-self: center; margin-left: .55rem; margin-right: clamp(.55rem, 2vw, 1.4rem); border: 1px solid var(--ink); background: var(--sheet-hi); }
+    .lang button { min-width: 38px; min-height: 30px; padding: .3rem .5rem; border: 0; background: transparent; color: var(--ink); font: 500 .64rem/1 var(--mono); letter-spacing: .08em; cursor: pointer; transition: background .16s ease, color .16s ease; }
+    .lang button + button { border-left: 1px solid var(--rule); }
+    .lang button:hover { background: var(--brass); }
+    .lang button[aria-pressed="true"] { background: var(--ink); color: var(--sheet-hi); }
+
+    /* ---------- language visibility ---------- */
+    html[data-lang="en"] [lang="tr"] { display: none; }
+    html[data-lang="tr"] [lang="en"] { display: none; }
+
+    /* ---------- hero ---------- */
+    .hero { position: relative; min-height: 100svh; max-width: 1560px; margin: auto; padding: clamp(3.9rem, 7vh, 5.4rem) var(--gutter) 0; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr); grid-template-rows: 1fr auto; gap: clamp(1.6rem, 4.5vw, 5rem) clamp(1.6rem, 4.5vw, 5rem); background-image: var(--ruled); }
+    .hero-copy { align-self: center; padding: 1.6rem 0 2.2rem; }
+    .kicker { color: var(--redink); font: 500 .65rem/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    /* Bottom margin carries Ş's cedilla, which drops well below the baseline */
+    h1 { margin: 1rem 0 2.1rem; font: 500 clamp(3.7rem, 9.6vw, 9.6rem)/.87 var(--display); letter-spacing: -.035em; }
+    h1 span { display: block; }
+    /* Ö's diaeresis rides above the cap line, so the tight leading needs a nudge here */
+    h1 .surname { margin-top: .16em; color: var(--redink); font-style: italic; }
+    .hero-lead { max-width: 640px; margin-bottom: .9rem; font-size: clamp(1rem, 1.25vw, 1.18rem); line-height: 1.62; }
+    .hero-lead a, .entry-list a { text-decoration-color: var(--redink); text-decoration-thickness: 1px; text-underline-offset: 5px; transition: color .16s ease; }
+    .hero-lead a:hover, .entry-list a:hover { color: var(--redink); }
+    .hero-now { max-width: 640px; margin-bottom: 1.8rem; color: var(--muted); font: 500 .8rem/1.5 var(--mono); }
+    .actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .button { display: inline-flex; align-items: center; min-height: 44px; padding: .6rem .95rem; border: 1px solid var(--ink); background: var(--sheet-hi); font: 500 .68rem/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; text-decoration: none; box-shadow: 4px 4px 0 rgba(15, 21, 25, .2); transition: transform .16s ease, box-shadow .16s ease; }
+    .button:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(15, 21, 25, .22); }
+    .button:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 rgba(15, 21, 25, .2); }
+    .button.is-primary { background: var(--brass); }
+    .button.is-dark { background: var(--ink); color: var(--sheet-hi); }
+
+    /* ---------- hero side column: portrait over the ledger card ---------- */
+    .hero-side { align-self: center; justify-self: end; display: grid; gap: 1.15rem; width: 100%; max-width: 500px; }
+    .portrait { justify-self: end; width: 100%; max-width: 344px; padding: .7rem; border: 1px solid var(--ink); background: var(--sheet-hi); box-shadow: 9px 9px 0 rgba(15, 21, 25, .18); }
+    .portrait-stage { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--pad) center / cover no-repeat; }
+    .portrait-stage img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 28%; opacity: 1; transition: opacity .5s ease; }
+    .portrait-stage img.is-out { opacity: 0; }
+    .portrait figcaption { display: flex; justify-content: space-between; gap: 1rem; padding-top: .6rem; color: var(--muted); font: 500 .55rem/1.4 var(--mono); letter-spacing: .11em; text-transform: uppercase; }
+    .portrait figcaption b { color: var(--redink); font-weight: 500; }
+
+    /* ---------- ledger extract card: the hero's artifact ---------- */
+    .extract { width: 100%; border: 1px solid var(--ink); background: var(--sheet-hi); box-shadow: 11px 11px 0 rgba(15, 21, 25, .18); }
+    .extract-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .6rem .9rem; border-bottom: 1px solid var(--ink); background: var(--brass); font: 600 .6rem/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .extract table { width: 100%; border-collapse: collapse; }
+    .extract th { padding: .5rem .9rem; border-bottom: 1px solid var(--ink); color: var(--muted); font: 500 .55rem/1.3 var(--mono); letter-spacing: .1em; text-align: left; text-transform: uppercase; }
+    .extract td { padding: .8rem .9rem; border-bottom: 1px solid var(--rule-soft); vertical-align: top; font-size: .87rem; line-height: 1.4; }
+    .extract tr:last-child td { border-bottom: 0; }
+    .extract .col-date { width: 6.4rem; color: var(--muted); font: 500 .68rem/1.5 var(--mono); white-space: nowrap; }
+    .extract .col-ref { width: 5.6rem; color: var(--redink); font: 500 .58rem/1.5 var(--mono); letter-spacing: .08em; text-align: right; }
+    .extract-foot { padding: .7rem .9rem; border-top: 1px solid var(--ink); background: var(--pad); color: var(--muted); font: 500 .58rem/1.5 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+
+    /* ---------- ledger strip ---------- */
+    .strip { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(210px, 1.25fr) repeat(4, minmax(140px, 1fr)); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+    /* every token is one word, so centring keeps the row even; a two-word token
+       would wrap and knock its label out of line with the rest */
+    .strip > div { display: flex; flex-direction: column; justify-content: center; min-height: 104px; padding: 1rem 1.1rem; border-left: 1px solid var(--rule); }
+    .strip > div:first-child { padding-left: 0; border-left: 0; }
+    .strip .strip-intro { color: var(--muted); font: 500 .62rem/1.6 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+    .strip b { font: 500 clamp(1.7rem, 2.7vw, 2.6rem)/1 var(--display); letter-spacing: -.01em; }
+    .strip > div > span { margin-top: .45rem; font: 500 .59rem/1.45 var(--mono); letter-spacing: .085em; text-transform: uppercase; }
+
+    /* ---------- section frame ---------- */
+    .section { border-top: 1px solid var(--ink); }
+    .section-shell { display: grid; grid-template-columns: minmax(210px, 27%) 1fr; max-width: 1560px; margin: auto; }
+    .section-heading { padding: clamp(2.8rem, 6vw, 6rem) clamp(1.1rem, 2.6vw, 3rem) clamp(2.8rem, 6vw, 6rem) var(--gutter); border-right: 1px solid var(--rule); }
+    .section-heading-inner { position: sticky; top: 84px; }
+    .section-no { display: block; color: var(--redink); font: 500 .64rem/1 var(--mono); letter-spacing: .14em; }
+    .section h2 { max-width: 13ch; margin: .8rem 0 .9rem; font: 500 clamp(2.4rem, 4.2vw, 4.6rem)/.87 var(--display); letter-spacing: -.025em; }
+    .section-heading p { max-width: 26ch; margin: 0; color: var(--muted); font-size: .9rem; }
+    .section-body { padding: clamp(2.8rem, 6vw, 6rem) var(--gutter) clamp(2.8rem, 6vw, 6rem) clamp(1.3rem, 3.2vw, 4rem); }
+
+    /* ---------- now ---------- */
+    .now { background: var(--sheet); }
+    .entry-list { margin: 0; padding: 0; list-style: none; }
+    .entry-list > li { display: grid; grid-template-columns: minmax(110px, 17%) 1fr; gap: 1.4rem; padding-bottom: 2.1rem; margin-bottom: 2.1rem; border-bottom: 1px solid var(--rule-soft); }
+    .entry-list > li:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; }
+    .entry-tag { color: var(--redink); font: 500 .62rem/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .entry-list h3 { margin: -.2rem 0 .6rem; max-width: 24ch; font: 500 clamp(1.4rem, 2.1vw, 2.15rem)/1.06 var(--display); letter-spacing: -.015em; }
+    .entry-list p { max-width: 66ch; margin: 0; }
+    .org { margin: 0 0 1.05rem; }
+    .org img { display: block; width: auto; height: 36px; object-fit: contain; object-position: left; }
+    /* Cloudpeer and the school both publish only a light-on-dark mark, so they
+       get the dark field they were drawn for rather than being recoloured */
+    .org-ink { display: inline-block; padding: .55rem .8rem; background: var(--ink); box-shadow: 5px 5px 0 rgba(15, 21, 25, .18); }
+    .org-ink img { height: 27px; }
+
+    /* ---------- work ---------- */
+    .work { background: var(--pad); background-image: var(--ruled); }
+    .work .section-heading { background: var(--pad-deep); background-image: var(--ruled); }
+    .work-list { border-top: 1px solid var(--ink); }
+    .work-row { display: grid; grid-template-columns: minmax(150px, .8fr) minmax(240px, 2.2fr) minmax(84px, auto); gap: 1.3rem; align-items: start; padding: 1.5rem 1.2rem 1.5rem 0; border-bottom: 1px solid var(--rule); color: inherit; text-decoration: none; transition: background .22s ease, padding .22s ease, box-shadow .22s ease; }
+    a.work-row:hover { position: relative; z-index: 1; padding-left: .85rem; padding-right: .35rem; background: var(--brass); box-shadow: 7px 7px 0 rgba(15, 21, 25, .2); }
+    .work-type { color: var(--redink); font: 500 .6rem/1.6 var(--mono); letter-spacing: .085em; text-transform: uppercase; }
+    a.work-row:hover .work-type { color: var(--ink); }
+    .work-row h3 { margin: -.3rem 0 .5rem; font: 500 clamp(1.35rem, 2.05vw, 2.05rem)/1.08 var(--display); letter-spacing: -.015em; }
+    .work-row p { max-width: 64ch; margin: 0; font-size: .93rem; }
+    .work-mark { padding-top: .2rem; color: var(--redink); font: 500 .58rem/1.4 var(--mono); letter-spacing: .08em; text-align: right; text-transform: uppercase; }
+    a.work-row .work-mark { padding-top: 0; font: 400 1.6rem/1 var(--display); }
+    a.work-row:hover .work-mark { color: var(--ink); }
+    .work-also { padding-top: 1.7rem; }
+    .work-also > span { color: var(--muted); font: 500 .6rem/1.6 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+    .work-also ul { margin: .9rem 0 0; padding: 0; list-style: none; display: grid; gap: 1rem; }
+    .work-also a { display: inline-block; font: 500 .8rem/1.4 var(--mono); text-decoration-color: var(--redink); text-underline-offset: 4px; }
+    .work-also em { display: block; max-width: 62ch; margin-top: .2rem; color: var(--muted); font-style: normal; font-size: .87rem; }
+
+    /* ---------- stack ---------- */
+    .stack { background: var(--sheet); }
+    .stack-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+    .stack-cell { padding: 1.1rem 1.15rem 1.3rem; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+    .stack-cell:nth-child(4n+2), .stack-cell:nth-child(4n+3) { background: rgba(217, 228, 213, .38); }
+    .stack-cell h3 { margin: 0 0 .55rem; color: var(--redink); font: 500 .6rem/1.4 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+    .stack-cell p { margin: 0; font-size: .93rem; line-height: 1.55; }
+
+    /* ---------- education ---------- */
+    .education { background: var(--pad); background-image: var(--ruled); }
+    .education .section-heading { background: var(--pad-deep); background-image: var(--ruled); }
+    .edu-item { position: relative; padding: 0 0 2.4rem 1.5rem; border-left: 1px solid var(--redink); }
+    .edu-item:last-child { padding-bottom: 0; }
+    .edu-item::before { content: ""; position: absolute; top: 6px; left: -5.5px; width: 10px; height: 10px; border: 1px solid var(--ink); background: var(--brass); }
+    .edu-year { color: var(--redink); font: 500 .62rem/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .edu-item h3 { margin: .45rem 0 .5rem; max-width: 26ch; font: 500 clamp(1.4rem, 2.1vw, 2.15rem)/1.08 var(--display); letter-spacing: -.015em; }
+    .edu-where { margin: 0 0 .9rem; color: var(--muted); font-size: .92rem; }
+    .edu-where a { text-decoration-color: var(--redink); text-underline-offset: 4px; }
+    .edu-item > p { max-width: 64ch; }
+    .edu-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 720px; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+    .edu-facts li { padding: .7rem 1rem .7rem 0; border-bottom: 1px solid var(--rule); font-size: .87rem; }
+    .edu-facts li:nth-child(n+3) { grid-column: 1 / -1; }
+    .edu-facts strong { display: block; color: var(--redink); font: 500 .56rem/1.6 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+
+    /* ---------- contact ---------- */
+    .contact { border-top: 1px solid var(--ink); background: var(--ink); color: var(--sheet); }
+    .contact-shell { display: grid; grid-template-columns: 1.12fr .88fr; gap: clamp(2rem, 5.5vw, 5.5rem); align-items: center; min-height: 92svh; max-width: 1560px; margin: auto; padding: clamp(3.4rem, 7vw, 7rem) var(--gutter); }
+    .contact .section-no { color: var(--brass); }
+    .contact h2 { max-width: 15ch; margin: .9rem 0 1.2rem; font: 500 clamp(2.9rem, 6.1vw, 6.4rem)/.96 var(--display); letter-spacing: -.028em; }
+    .contact-copy { max-width: 56ch; margin-bottom: 1.9rem; color: #d5dbd6; font-size: 1.02rem; }
+    .contact-threads { display: flex; flex-wrap: wrap; gap: .4rem .9rem; max-width: 60ch; margin: 0; padding: .85rem 0; border-top: 1px solid rgba(246, 245, 239, .3); border-bottom: 1px solid rgba(246, 245, 239, .3); color: var(--brass); font: 500 .6rem/1.5 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+    .card { border: 1px solid var(--ink); background: var(--sheet-hi); color: var(--ink); box-shadow: 13px 13px 0 var(--brass); }
+    .card-top { display: flex; gap: 1rem; align-items: center; padding: 1.1rem; border-bottom: 1px solid var(--ink); background: var(--pad); }
+    .card-top img { width: 106px; height: 106px; flex: 0 0 auto; border: 1px solid var(--ink); object-fit: cover; }
+    .card-top div { min-width: 0; }
+    .card-top strong { display: block; font: 500 1.3rem/1.1 var(--display); letter-spacing: -.01em; }
+    .card-top span { display: block; margin-top: .3rem; color: var(--muted); font: 500 .58rem/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .card-links { padding: 0 1.1rem 1.1rem; }
+    .card-links a { display: flex; justify-content: space-between; gap: 1rem; padding: .85rem .25rem; border-bottom: 1px solid var(--rule); font: 500 .74rem/1.3 var(--mono); text-decoration: none; overflow-wrap: anywhere; transition: background .16s ease, color .16s ease, padding .16s ease; }
+    .card-links a:hover { padding-left: .6rem; background: var(--pad); color: var(--redink); }
+    .card-note { margin: 0; padding: .9rem 1.1rem; border-top: 1px solid var(--ink); background: var(--pad); color: var(--muted); font: 500 .58rem/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+
+    /* ---------- embedded demos ----------
+       Each panel sits inside the work row it belongs to, so it reads as that
+       piece of work running rather than as a widget parked between rows. Every
+       number is computed in the page from synthetic data; no chart here is a
+       fixture, and no weight or threshold comes from anyone's real model. */
+    .work-row p.demo-lead { max-width: none; margin: 1.3rem 0 .6rem; color: var(--redink); font: 500 .66rem/1.5 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .demo { max-width: 640px; border: 1px solid var(--ink); background: var(--sheet-hi); box-shadow: 9px 9px 0 rgba(15, 21, 25, .18); }
+    .demo-head { display: flex; justify-content: space-between; gap: 1rem; padding: .6rem .9rem; border-bottom: 1px solid var(--ink); background: var(--brass); font: 600 .7rem/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .work-row p.demo-foot { max-width: none; margin: 0; padding: .7rem .9rem; border-top: 1px solid var(--rule); color: var(--muted); font: 500 .68rem/1.5 var(--mono); letter-spacing: .02em; }
+    .demo-chip { padding: .3rem .6rem; border: 1px solid var(--ink); font: 600 .68rem/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+    .demo-chip[data-state="ok"] { background: var(--pad); }
+    .demo-chip[data-state="watch"] { background: var(--brass); }
+    .demo-chip[data-state="alarm"] { background: var(--redink); color: var(--sheet-hi); }
+    .demo input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 22px; margin: 0; background: transparent; }
+    .demo input[type="range"]::-webkit-slider-runnable-track { height: 5px; background: var(--rule); }
+    .demo input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 22px; margin-top: -8.5px; border: 1px solid var(--ink); background: var(--brass); }
+    .demo input[type="range"]::-moz-range-track { height: 5px; background: var(--rule); }
+    .demo input[type="range"]::-moz-range-thumb { width: 14px; height: 20px; border: 1px solid var(--ink); border-radius: 0; background: var(--brass); }
+
+    /* scoring panel: bins in, calibrated PD out, reasons underneath */
+    .score-body { display: grid; grid-template-columns: minmax(0, 1fr) 168px; }
+    .score-inputs { display: grid; gap: .75rem; padding: .95rem 1rem; }
+    .score-row label { display: flex; justify-content: space-between; gap: .5rem; color: var(--muted); font: 500 .76rem/1.4 var(--mono); letter-spacing: .03em; text-transform: uppercase; }
+    .score-row label b { color: var(--ink); font-weight: 600; font-size: .88rem; font-variant-numeric: tabular-nums; }
+    .score-out { display: flex; flex-direction: column; justify-content: center; gap: .2rem; padding: .95rem .9rem; border-left: 1px solid var(--rule); }
+    .score-out small { color: var(--muted); font: 500 .64rem/1.3 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .score-out b { font: 500 2.6rem/1.05 var(--display); letter-spacing: -.015em; font-variant-numeric: tabular-nums; }
+    .score-out em { margin-top: .35rem; font: 500 .74rem/1.4 var(--mono); font-style: normal; font-variant-numeric: tabular-nums; }
+    .score-grade { align-self: flex-start; margin-top: .55rem; font-size: .84rem; }
+    .score-why { padding: .85rem 1rem .95rem; border-top: 1px solid var(--rule); }
+    .score-why > span { color: var(--redink); font: 500 .66rem/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .score-why ul { display: grid; gap: .45rem; margin: .6rem 0 0; padding: 0; list-style: none; }
+    .score-why li { display: grid; grid-template-columns: 54px minmax(0, 1fr) auto; gap: .7rem; align-items: center; font: 500 .74rem/1.4 var(--mono); }
+    .score-why i { height: 12px; border: 1px solid var(--ink); background: var(--redink); }
+    .score-why em { font-style: normal; color: var(--muted); }
+    .score-why b { color: var(--redink); font-variant-numeric: tabular-nums; }
+
+    /* monitoring panel: frozen reference, one window, two signals */
+    .drift-scenes { display: flex; flex-wrap: wrap; gap: .35rem; padding: .9rem 1rem .2rem; }
+    .drift-scenes button { padding: .45rem .7rem; border: 1px solid var(--ink); background: var(--sheet); color: inherit; font: 500 .68rem/1.3 var(--mono); letter-spacing: .05em; text-transform: uppercase; transition: background .16s ease, color .16s ease; }
+    .drift-scenes button:hover { background: var(--brass); }
+    .drift-scenes button[aria-pressed="true"] { background: var(--ink); color: var(--sheet-hi); }
+    .work-row p.drift-note { max-width: none; margin: 0; padding: .7rem 1rem .25rem; color: var(--muted); font-size: .92rem; line-height: 1.5; }
+    .drift-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: .55rem 1rem .2rem; }
+    .drift-charts figure { margin: 0; min-width: 0; }
+    .drift-charts svg { display: block; width: 100%; height: auto; border: 1px solid var(--rule-soft); background: var(--sheet); }
+    .drift-charts figcaption { margin-top: .45rem; color: var(--muted); font: 500 .66rem/1.4 var(--mono); letter-spacing: .03em; }
+    .drift-legend { display: flex; flex-wrap: wrap; gap: .3rem 1rem; padding: .55rem 1rem 0; color: var(--muted); font: 500 .64rem/1.5 var(--mono); letter-spacing: .05em; text-transform: uppercase; }
+    .drift-legend i { display: inline-block; width: 10px; height: 10px; margin-right: .4rem; vertical-align: middle; }
+    .drift-legend .k-ref { background: rgba(15, 21, 25, .3); }
+    .drift-legend .k-cur { background: var(--brass); }
+    .drift-legend .k-ood { background: var(--redink); }
+    .drift-legend .k-ring { width: 14px; height: 0; border-top: 1px dashed var(--redink); }
+    .dot-ref { fill: none; stroke: var(--ink); stroke-width: 1.7; stroke-linecap: round; opacity: .22; }
+    .dot-cur { fill: none; stroke: var(--brass); stroke-width: 2.8; stroke-linecap: round; }
+    .dot-ood { fill: none; stroke: var(--redink); stroke-width: 3.4; stroke-linecap: round; }
+    .ood-ring { fill: none; stroke: var(--redink); stroke-width: 1; stroke-dasharray: 3 2.4; opacity: .75; }
+    .hist-ref { fill: none; stroke: var(--redink); stroke-width: 1.1; stroke-dasharray: 3 2.4; }
+    .hist-cur { fill: var(--brass); stroke: var(--ink); stroke-width: .8; }
+    .drift-reads { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 1rem; padding: .85rem 1rem .2rem; }
+    .drift-read { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: .2rem .5rem; }
+    .drift-read small { color: var(--muted); font: 500 .64rem/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+    .drift-read b { font: 500 2.1rem/1.1 var(--display); font-variant-numeric: tabular-nums; }
+    .drift-read em { justify-self: end; color: var(--muted); font: 500 .66rem/1.4 var(--mono); font-style: normal; font-variant-numeric: tabular-nums; }
+
+    /* ---------- scroll spy ---------- */
+    .header-nav a.is-current { color: var(--brass); }
+    .header-nav a.is-current::after { content: ""; position: absolute; left: .5rem; right: .5rem; bottom: 8px; height: 2px; background: var(--brass); }
+
+    /* ---------- copyable address rows ---------- */
+    .card-row { display: flex; align-items: center; gap: .5rem; border-bottom: 1px solid var(--rule); }
+    .card-links .card-row a { flex: 1 1 auto; border-bottom: 0; }
+    .card-copy { flex: 0 0 auto; min-width: 2.1rem; padding: .5rem .35rem; margin-right: .1rem; border: 0; background: transparent; color: var(--muted); font: 500 .58rem/1.2 var(--mono); letter-spacing: .05em; text-transform: uppercase; transition: color .16s ease; }
+    .card-copy:hover { color: var(--redink); }
+    .card-copy[data-done] { color: var(--redink); }
+
+    /* Turkish casing turns i into İ, which mangles English proper nouns under
+       text-transform. Kept last so it wins on source order. */
+    .nocase { text-transform: none; }
+
+    /* ---------- responsive ---------- */
+    @media (max-width: 1080px) {
+      .strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .strip > div:first-child { grid-column: 1 / -1; padding-bottom: .3rem; min-height: 0; }
+    }
+    @media (max-width: 900px) {
+      .margin-rule { left: .6rem; }
+      .header-nav a:nth-child(-n+2) { display: none; }
+      .hero { grid-template-columns: 1fr; grid-template-rows: auto; padding-top: 5.2rem; gap: 2.2rem; }
+      .hero-side { justify-self: stretch; max-width: none; }
+      .portrait { justify-self: start; max-width: 300px; }
+      .section-shell { grid-template-columns: 1fr; }
+      .section-heading { padding: 2.8rem var(--gutter) 1.8rem; border-right: 0; border-bottom: 1px solid var(--rule); }
+      .section-heading-inner { position: static; }
+      .section h2, .section-heading p { max-width: none; }
+      .section-body { padding: 2.6rem var(--gutter); }
+      .work-row { grid-template-columns: 1fr; gap: .55rem; padding-right: 0; }
+      .work-mark { padding-top: 0; text-align: left; }
+      a.work-row .work-mark { font-size: 1.25rem; }
+      a.work-row:hover { padding-left: .6rem; }
+      .contact-shell { grid-template-columns: 1fr; min-height: 0; }
+    }
+    @media (max-width: 560px) {
+      body { font-size: 15.5px; }
+      /* three-part kicker only clears 360px viewports at the tighter setting */
+      .kicker { font-size: .57rem; letter-spacing: .08em; }
+      .header-nav { display: none; }
+      h1 { font-size: clamp(3.2rem, 17vw, 5.4rem); }
+      .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .strip > div { min-height: 84px; padding: .8rem .85rem; }
+      /* longest token (Cloudpeer) clears a 360px cell only at this size */
+      .strip b { font-size: 1.5rem; }
+      .strip > div:nth-child(even) { border-left: 0; }
+      .entry-list > li { grid-template-columns: 1fr; gap: .5rem; }
+      .stack-grid, .edu-facts { grid-template-columns: 1fr; }
+      .extract .col-ref { display: none; }
+      .score-body { grid-template-columns: 1fr; }
+      .score-out { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: .5rem; border-left: 0; border-top: 1px solid var(--rule); }
+      .score-out b { font-size: 1.6rem; }
+      .score-grade { margin-top: 0; }
+      .drift-charts, .drift-reads { grid-template-columns: 1fr; }
+      .drift-scenes button.drift-redraw { margin-left: 0; }
+      .card-top { flex-direction: column; align-items: flex-start; }
+      .contact h2 { font-size: clamp(2.7rem, 13vw, 4.2rem); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-delay: 0s !important; }
+      .margin-rule i { transform: scaleY(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="margin-rule" aria-hidden="true"><i></i></div>
+  <a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="tr">İçeriğe geç</span></a>
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top">Batu <em>Önlükuş</em></a>
+      <div class="header-right">
+        <nav class="header-nav" aria-label="Primary">
+          <a href="#now"><span lang="en">Now</span><span lang="tr">Şu an</span></a>
+          <a href="#work"><span lang="en">Work</span><span lang="tr">İşler</span></a>
+          <a href="#stack"><span lang="en">Stack</span><span lang="tr">Yetkinlik</span></a>
+          <a href="#education"><span lang="en">Education</span><span lang="tr">Eğitim</span></a>
+          <a href="#contact"><span lang="en">Contact</span><span lang="tr">İletişim</span></a>
+        </nav>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-set-lang="tr" aria-pressed="false">TR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="kicker"><span lang="en">Machine learning · Data science · Blockchain</span><span lang="tr" class="nocase">MAKİNE ÖĞRENMESİ · VERİ BİLİMİ · BLOCKCHAIN</span></p>
+        <h1><span>Batu</span><span class="surname">Önlükuş</span></h1>
+        <p class="hero-lead">
+          <span lang="en">Third-year AI and Data Engineering student at Özyeğin University. I work across machine learning, data science and blockchain. Right now I am at <a href="https://www.linkedin.com/company/cloudpeer/" target="_blank" rel="noopener">Cloudpeer</a>, building the blockchain and AI integration for the <a href="https://imza.io" target="_blank" rel="noopener">imza.io</a> platform.</span>
+          <span lang="tr">Özyeğin Üniversitesi Yapay Zeka ve Veri Mühendisliği 3. sınıf öğrencisiyim. Makine öğrenmesi, veri bilimi ve blockchain üzerine yoğunlaşıyorum. Şu anda <a href="https://www.linkedin.com/company/cloudpeer/" target="_blank" rel="noopener">Cloudpeer</a>'da <a href="https://imza.io" target="_blank" rel="noopener">imza.io</a> platformunun blockchain ve yapay zeka entegrasyonunu yapıyorum.</span>
+        </p>
+        <p class="hero-now">
+          <span lang="en">Part-time from August 2026, alongside the degree.</span>
+          <span lang="tr">Ağustos 2026'dan itibaren, okulla birlikte yarı zamanlı.</span>
+        </p>
+        <div class="actions">
+          <a class="button is-primary" href="#contact"><span lang="en">Get in touch</span><span lang="tr">İletişime geç</span></a>
+          <a class="button is-dark" href="/cv/Batu_Onlukus_CV.pdf"><span lang="en">Download CV</span><span lang="tr">CV indir</span></a>
+          <a class="button nocase" href="https://github.com/batuonlukus" target="_blank" rel="noopener">GITHUB</a>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+      <figure class="portrait">
+        <div class="portrait-stage" data-portrait-stage>
+          <img src="/images/portrait-1.jpg" alt="Batu Önlükuş" width="800" height="1000" fetchpriority="high" data-portrait-img>
+        </div>
+        <figcaption>
+          <span lang="en">Photograph</span><span lang="tr">Fotoğraf</span>
+          <span><b data-portrait-index>01</b> / 03</span>
+        </figcaption>
+      </figure>
+
+      <div class="extract" aria-label="Current position">
+        <div class="extract-head">
+          <span lang="en">Recent entries</span><span lang="tr">Son kayıtlar</span>
+          <span>2026</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col"><span lang="en">Date</span><span lang="tr">Tarih</span></th>
+              <th scope="col"><span lang="en">Entry</span><span lang="tr">Kayıt</span></th>
+              <th scope="col" class="col-ref"><span lang="en">Ref</span><span lang="tr">Ref</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-date">2026-07-01</td>
+              <td><span lang="en">Data science internship begins at Cloudpeer</span><span lang="tr">Cloudpeer'da veri bilimi stajı başladı</span></td>
+              <td class="col-ref nocase">IDES</td>
+            </tr>
+            <tr>
+              <td class="col-date">2026-08-01</td>
+              <td><span lang="en">Internship completed</span><span lang="tr">Staj tamamlandı</span></td>
+              <td class="col-ref nocase">IDES</td>
+            </tr>
+            <tr>
+              <td class="col-date">2026-08-10</td>
+              <td><span lang="en">Machine learning and blockchain, part-time</span><span lang="tr">Makine öğrenmesi ve blockchain, yarı zamanlı</span></td>
+              <td class="col-ref nocase">imza.io</td>
+            </tr>
+            <tr>
+              <td class="col-date">2026-09</td>
+              <td><span lang="en">Inflation paper accepted, presenting at ASYU</span><span lang="tr">Enflasyon makalesi kabul edildi, ASYU'da sunum</span></td>
+              <td class="col-ref nocase">ASYU 2026</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="extract-foot">
+          <span lang="en">Cloudpeer Global Teknoloji · Teknopark İstanbul</span>
+          <span lang="tr">Cloudpeer Global Teknoloji · Teknopark İstanbul</span>
+        </p>
+      </div>
+      </aside>
+
+      <div class="strip">
+        <div class="strip-intro"><span lang="en">Highlights so far</span><span lang="tr">Öne çıkanlar</span></div>
+        <div>
+          <b><span lang="en">3rd</span><span lang="tr">3.</span></b>
+          <span lang="en">Kapsül Teknoloji Blockchain Hackathon</span><span lang="tr" class="nocase">KAPSÜL TEKNOLOJİ BLOCKCHAIN HACKATHON</span>
+        </div>
+        <div>
+          <b><span lang="en">Developer</span><span lang="tr">Geliştirici</span></b>
+          <span lang="en">ÖzÜ Blockchain Club, Chain Magazine coordinator</span><span lang="tr" class="nocase">ÖZÜ BLOCKCHAIN KULÜBÜ, CHAIN MAGAZINE KOORDİNATÖRÜ</span>
+        </div>
+        <div>
+          <b>Cloudpeer</b>
+          <span lang="en">Fintech credit scoring system, machine learning</span><span lang="tr" class="nocase">FINTECH KREDİ SKORLAMA SİSTEMİ, MAKİNE ÖĞRENMESİ</span>
+        </div>
+        <div>
+          <b><span lang="en">Research</span><span lang="tr">Araştırma</span></b>
+          <span lang="en">Inflation paper accepted, ASYU 2026</span><span lang="tr">Enflasyon makalesi kabul edildi, ASYU 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section now" id="now" aria-labelledby="now-title">
+      <div class="section-shell">
+        <header class="section-heading">
+          <div class="section-heading-inner">
+            <span class="section-no">01</span>
+            <h2 id="now-title"><span lang="en">Where I am</span><span lang="tr">Şu an</span></h2>
+            <p><span lang="en">Where I work now, and where I studied before it.</span><span lang="tr">Şu an nerede çalıştığım ve öncesinde nerede okuduğum.</span></p>
+          </div>
+        </header>
+        <div class="section-body">
+          <ul class="entry-list">
+            <li>
+              <span class="entry-tag"><span lang="en">Jul 2026 → now</span><span lang="tr">Tem 2026 → şu an</span></span>
+              <div>
+                <h3><a href="https://www.linkedin.com/company/cloudpeer/" target="_blank" rel="noopener">Cloudpeer Global Teknoloji</a></h3>
+                <div class="org org-ink"><img src="/images/logos/cloudpeer.svg" alt="Cloudpeer" width="615" height="234" loading="lazy"></div>
+                <p>
+                  <span lang="en">Started as a summer intern on IDES, the credit-risk and guarantee platform Cloudpeer supports for İGE. That work ran from exploratory analysis through to a machine learning scoring model and a monitoring layer for the company applications feeding it. Since August I have been on <a href="https://imza.io" target="_blank" rel="noopener">imza.io</a> instead, the company's digital signature and mobile identity platform, building its blockchain and AI integration part-time alongside the degree.</span>
+                  <span lang="tr">Cloudpeer'ın İGE için desteklediği kredi riski ve kefalet platformu IDES üzerinde yaz stajyeri olarak başladım. O iş keşifsel analizle açıldı, makine öğrenmesi tabanlı bir skorlama modeline ve onu besleyen firma başvurularını izleyen bir katmana uzandı. Ağustos'tan beri şirketin dijital imza ve mobil kimlik platformu <a href="https://imza.io" target="_blank" rel="noopener">imza.io</a> tarafındayım, platformun blockchain ve yapay zeka entegrasyonunu okulla birlikte yarı zamanlı kuruyorum.</span>
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="entry-tag"><span lang="en">Study</span><span lang="tr">Öğrenim</span></span>
+              <div>
+                <h3><a lang="en" href="https://www.ozyegin.edu.tr/en" target="_blank" rel="noopener">AI and Data Engineering, Özyeğin University</a><a lang="tr" href="https://www.ozyegin.edu.tr/tr" target="_blank" rel="noopener">Yapay Zeka ve Veri Mühendisliği, Özyeğin Üniversitesi</a></h3>
+                <div class="org"><a href="https://www.ozyegin.edu.tr/en" target="_blank" rel="noopener"><img src="/images/logos/ozyegin.svg" alt="Özyeğin Üniversitesi" width="425" height="126" loading="lazy"></a></div>
+                <p>
+                  <span lang="en">Third year from September 2026, graduating 2028. Data science, probability and statistics, and linear algebra are behind me; machine learning, deep learning and large language models are what the next two years are built around.</span>
+                  <span lang="tr">Eylül 2026'dan itibaren 3. sınıf, mezuniyet 2028. Veri bilimi, olasılık ve istatistik, lineer cebir arkamda kaldı; önümdeki iki yıl makine öğrenmesi, derin öğrenme ve büyük dil modelleri üzerine kurulu.</span>
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="entry-tag"><span lang="en">Class of 2024</span><span lang="tr">2024 mezunu</span></span>
+              <div>
+                <h3><a href="https://bjkkabatasvakfiokullari.k12.tr/" target="_blank" rel="noopener">BJK Kabataş Vakfı Özel Fen ve Teknoloji Lisesi</a></h3>
+                <div class="org org-ink"><img src="/images/logos/bjk.png" alt="BJK Kabataş Vakfı Özel Okulları" width="240" height="60" loading="lazy"></div>
+                <p>
+                  <span lang="en">Science high school · Üsküdar, İstanbul</span>
+                  <span lang="tr">Fen Lisesi · Üsküdar, İstanbul</span>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work" id="work" aria-labelledby="work-title">
+      <div class="section-shell">
+        <header class="section-heading">
+          <div class="section-heading-inner">
+            <span class="section-no">02</span>
+            <h2 id="work-title"><span lang="en">Selected work</span><span lang="tr">Seçilmiş işler</span></h2>
+            <p><span lang="en">What I built, and why it was built that way.</span><span lang="tr">Ne kurdum ve neden öyle kurdum.</span></p>
+          </div>
+        </header>
+        <div class="section-body">
+          <div class="work-list">
+            <article class="work-row">
+              <span class="work-type"><span lang="en">Cloudpeer · Credit risk</span><span lang="tr">Cloudpeer · Kredi riski</span></span>
+              <div>
+                <h3><span lang="en">A credit scoring engine on logistic regression</span><span lang="tr">Lojistik regresyon üzerine kredi skorlama motoru</span></h3>
+                <p>
+                  <span lang="en">A machine learning scoring model for credit risk, built on weight-of-evidence binning and logistic regression so that every score arrives with the reasons behind it rather than as a number nobody can argue with. Presented to the CEO and CTO.</span>
+                  <span lang="tr">Kredi riski için makine öğrenmesi tabanlı bir skorlama modeli; WOE binleme ve lojistik regresyon üzerine kurulu, böylece her skor kimsenin tartışamayacağı bir sayı olarak değil arkasındaki gerekçelerle birlikte geliyor. CEO ve CTO'ya sunuldu.</span>
+                </p>
+                <p class="demo-lead">
+                  <span lang="en">The same chain, running on synthetic weights</span>
+                  <span lang="tr">Aynı zincirin sentetik ağırlıklarla çalışan hali</span>
+                </p>
+                <div class="demo" data-score>
+                  <div class="demo-head">
+                    <span><span lang="en">Score a company</span><span lang="tr">Bir firmayı skorla</span></span>
+                    <span><span lang="en">Synthetic</span><span lang="tr">Sentetik</span></span>
+                  </div>
+                  <div class="score-body">
+                    <div class="score-inputs">
+                      <div class="score-row">
+                        <label for="f-cheque">
+                          <span><span lang="en">Unpaid cheques, last 12 mo</span><span lang="tr">Karşılıksız çek, son 12 ay</span></span>
+                          <b data-out="cheque">2</b>
+                        </label>
+                        <input id="f-cheque" type="range" min="0" max="4" step="1" value="2" data-f="cheque">
+                      </div>
+                      <div class="score-row">
+                        <label for="f-debt">
+                          <span><span lang="en">Debt to equity</span><span lang="tr">Borçlanma oranı</span></span>
+                          <b data-out="debt">3.2</b>
+                        </label>
+                        <input id="f-debt" type="range" min="0" max="4" step="1" value="3" data-f="debt">
+                      </div>
+                      <div class="score-row">
+                        <label for="f-liq">
+                          <span><span lang="en">Current ratio</span><span lang="tr">Cari oran</span></span>
+                          <b data-out="liq">1.1</b>
+                        </label>
+                        <input id="f-liq" type="range" min="0" max="4" step="1" value="2" data-f="liq">
+                      </div>
+                      <div class="score-row">
+                        <label for="f-age">
+                          <span><span lang="en">Company age, years</span><span lang="tr">Firma yaşı, yıl</span></span>
+                          <b data-out="age">9</b>
+                        </label>
+                        <input id="f-age" type="range" min="0" max="4" step="1" value="1" data-f="age">
+                      </div>
+                    </div>
+                    <div class="score-out">
+                      <small><span lang="en">12-month PD</span><span lang="tr">12 aylık PD</span></small>
+                      <b data-pd aria-live="polite">5.0%</b>
+                      <em><span lang="en">Score</span><span lang="tr">Puan</span> <span data-points>600</span></em>
+                      <span class="demo-chip score-grade" data-grade data-state="ok">B</span>
+                    </div>
+                  </div>
+                  <div class="score-why">
+                    <span><span lang="en">Why this score</span><span lang="tr">Neden bu skor</span></span>
+                    <ul data-why></ul>
+                  </div>
+                  <p class="demo-foot">
+                    <span lang="en">Example only, not real data.</span>
+                    <span lang="tr">Örnektir, gerçek değildir.</span>
+                  </p>
+                </div>
+              </div>
+              <span class="work-mark"><span lang="en">Internal</span><span lang="tr">Kurum içi</span></span>
+            </article>
+
+            <article class="work-row">
+              <span class="work-type"><span lang="en">Cloudpeer · Monitoring</span><span lang="tr">Cloudpeer · İzleme</span></span>
+              <div>
+                <h3><span lang="en">Monitoring company applications</span><span lang="tr">Firma başvurularının izlenmesi</span></h3>
+                <p>
+                  <span lang="en">Data science on the population the model actually sees: whether the features of incoming company applications are drifting, whether their variance and standard deviation are moving, whether the covariance between them still holds. Tested against synthetic failure scenarios, and a locally run language model turns each result into a written report instead of another chart nobody opens.</span>
+                  <span lang="tr">Modelin gerçekte gördüğü popülasyon üzerine veri bilimi çalışması: gelen firma başvurularının değişkenleri kayıyor mu, varyans ve standart sapmaları oynuyor mu, aralarındaki kovaryans hâlâ duruyor mu. Sentetik bozulma senaryolarına karşı sınandı; sonucu yerelde çalışan bir dil modeli, kimsenin açmadığı bir grafik yerine yazılı rapora çeviriyor.</span>
+                </p>
+                <p class="demo-lead">
+                  <span lang="en">The same layer, running on one synthetic window</span>
+                  <span lang="tr">Aynı katmanın tek sentetik pencerede çalışan hali</span>
+                </p>
+                <div class="demo" data-drift>
+                  <div class="demo-head">
+                    <span><span lang="en">Break the window on purpose</span><span lang="tr">Pencereyi bilerek boz</span></span>
+                    <span><span lang="en">Synthetic</span><span lang="tr">Sentetik</span></span>
+                  </div>
+                  <div class="drift-scenes" role="group" aria-label="Scenario">
+                    <button type="button" data-scene="calm" aria-pressed="true"><span lang="en">Calm</span><span lang="tr">Sakin</span></button>
+                    <button type="button" data-scene="mass" aria-pressed="false"><span lang="en">Mass shift</span><span lang="tr">Kütle kayması</span></button>
+                    <button type="button" data-scene="tail" aria-pressed="false"><span lang="en">Tail shift</span><span lang="tr">Kuyruk kayması</span></button>
+                    <button type="button" data-scene="corr" aria-pressed="false"><span lang="en">Correlation break</span><span lang="tr">Korelasyon kırılması</span></button>
+                  </div>
+                  <p class="drift-note" data-note><span lang="en"></span><span lang="tr"></span></p>
+                  <div class="drift-charts">
+                    <figure>
+                      <svg viewBox="0 0 132 104" role="img" aria-label="Reference cloud, incoming window, and the reference's own outlier boundary">
+                        <path class="dot-ref" data-sc-ref></path>
+                        <path class="ood-ring" data-sc-ring></path>
+                        <path class="dot-cur" data-sc-cur></path>
+                        <path class="dot-ood" data-sc-ood></path>
+                      </svg>
+                      <figcaption><span lang="en">Two variables together</span><span lang="tr">İki değişken birlikte</span></figcaption>
+                    </figure>
+                    <figure>
+                      <svg viewBox="0 0 132 104" role="img" aria-label="Share of the window falling into each reference decile">
+                        <g data-hs-bars></g>
+                        <path class="hist-ref" data-hs-ref></path>
+                      </svg>
+                      <figcaption><span lang="en">One variable alone</span><span lang="tr">Tek başına bir değişken</span></figcaption>
+                    </figure>
+                  </div>
+                  <div class="drift-legend">
+                    <span><i class="k-ref"></i><span lang="en">Reference (frozen)</span><span lang="tr">Referans (donmuş)</span></span>
+                    <span><i class="k-cur"></i><span lang="en">Incoming window</span><span lang="tr">Gelen pencere</span></span>
+                    <span><i class="k-ood"></i><span lang="en">Unrecognised</span><span lang="tr">Tanınmayan</span></span>
+                    <span><i class="k-ring"></i><span lang="en">Reference line</span><span lang="tr">Referans çizgisi</span></span>
+                  </div>
+                  <div class="drift-reads">
+                    <div class="drift-read">
+                      <small><span lang="en">Debt ratio PSI</span><span lang="tr">Borçlanma oranı PSI</span></small>
+                      <span class="demo-chip" data-psi-chip data-state="ok">OK</span>
+                      <b data-psi>0.000</b>
+                      <em><span lang="en">band</span><span lang="tr">bant</span> <span data-psi-band>0.000</span></em>
+                    </div>
+                    <div class="drift-read">
+                      <small><span lang="en">Unrecognised profiles</span><span lang="tr">Tanınmayan profil</span></small>
+                      <span class="demo-chip" data-ood-chip data-state="ok">OK</span>
+                      <b data-ood>0.0%</b>
+                      <em><span lang="en">band</span><span lang="tr">bant</span> <span data-ood-band>0.0%</span></em>
+                    </div>
+                  </div>
+                  <p class="demo-foot">
+                    <span lang="en">Example only, not real data.</span>
+                    <span lang="tr">Örnektir, gerçek değildir.</span>
+                  </p>
+                </div>
+              </div>
+              <span class="work-mark"><span lang="en">Internal</span><span lang="tr">Kurum içi</span></span>
+            </article>
+
+            <article class="work-row">
+              <span class="work-type"><span lang="en">Cloudpeer · Tooling</span><span lang="tr">Cloudpeer · Araç</span></span>
+              <div>
+                <h3><span lang="en">Turkish meeting transcription, tuned and capped</span><span lang="tr">Türkçe toplantı transkripsiyonu, ayarlandı ve sınırlandı</span></h3>
+                <p>
+                  <span lang="en">A desktop transcription tool on Whisper for Turkish meeting audio. An initial prompt teaches the model the two things it kept getting wrong: the names of the people in the room and the fintech vocabulary they use. It also has a brake on the repetition loops Whisper falls into. Benchmarking showed the vocabulary list stops helping past a certain size and starts making things worse, so it ships with a cap.</span>
+                  <span lang="tr">Türkçe toplantı sesi için Whisper üzerine kurulmuş bir masaüstü transkripsiyon aracı. Başlangıç prompt'u modele sürekli yanlış yazdığı iki şeyi öğretiyor: odadaki insanların isimleri ve kullandıkları fintech terimleri. Whisper'ın girdiği tekrar döngülerine de fren kondu. Benchmark, sözlüğün belli bir boyuttan sonra faydayı bırakıp işi bozmaya başladığını gösterdi, o yüzden sınırla birlikte çıktı.</span>
+                </p>
+              </div>
+              <span class="work-mark"><span lang="en">Internal</span><span lang="tr">Kurum içi</span></span>
+            </article>
+
+            <a class="work-row" href="https://github.com/batuonlukus/InflationResearchStudy" target="_blank" rel="noopener">
+              <span class="work-type"><span lang="en">Research · Data collection</span><span lang="tr">Araştırma · Veri toplama</span></span>
+              <div>
+                <h3><span lang="en">Inflation Research Project</span><span lang="tr">Inflation Research Project</span></h3>
+                <p>
+                  <span lang="en">A collaborative study measuring daily price movement across more than 100 Turkish online retailers. I wrote collection pipelines, including the travel and tourism sector, feeding a price aggregation and inflation metric. The paper was accepted at ASYU 2026 and we present it in September.</span>
+                  <span lang="tr">100'den fazla Türk çevrim içi satıcıda günlük fiyat hareketini ölçen ortak bir çalışma. Seyahat ve turizm sektörü dahil olmak üzere, bir fiyat toplulaştırma ve enflasyon metriğini besleyen toplama hatlarını yazdım. Makale ASYU 2026'ya kabul edildi, Eylül'de sunacağız.</span>
+                </p>
+              </div>
+              <span class="work-mark" aria-hidden="true">↗</span>
+            </a>
+
+            <a class="work-row" href="https://github.com/batuonlukus/OzU-Blockchain-2-Granit-Project-" target="_blank" rel="noopener">
+              <span class="work-type"><span lang="en">Blockchain · Hackathon</span><span lang="tr" class="nocase">BLOCKCHAIN · HACKATHON</span></span>
+              <div>
+                <h3>Granit</h3>
+                <p>
+                  <span lang="en">Building inspection records carried as NFT-based identities with IoT integration, on Polygon. Third place at the Kapsül Teknoloji Blockchain Hackathon. Solidity, Hardhat.</span>
+                  <span lang="tr">Bina denetim kayıtlarının NFT tabanlı kimliklerle taşındığı, IoT entegrasyonlu bir sistem, Polygon üzerinde. Kapsül Teknoloji Blockchain Hackathon üçüncülüğü. Solidity, Hardhat.</span>
+                </p>
+              </div>
+              <span class="work-mark" aria-hidden="true">↗</span>
+            </a>
+
+            <a class="work-row" href="https://github.com/batuonlukus/unithackathon" target="_blank" rel="noopener">
+              <span class="work-type"><span lang="en">Blockchain · Hackathon</span><span lang="tr" class="nocase">BLOCKCHAIN · HACKATHON</span></span>
+              <div>
+                <h3>IDO Platform</h3>
+                <p>
+                  <span lang="en">A tokenization platform for startup funding where contribution share maps directly to voting power. Built at the Units Network Hackathon with Ethers.js.</span>
+                  <span lang="tr">Katkı payının doğrudan oy gücüne karşılık geldiği, girişim finansmanı için bir tokenizasyon platformu. Units Network Hackathon'da Ethers.js ile yapıldı.</span>
+                </p>
+              </div>
+              <span class="work-mark" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="work-also">
+            <span><span lang="en">Also on GitHub</span><span lang="tr" class="nocase">GITHUB'DA AYRICA</span></span>
+            <ul>
+              <li>
+                <a href="https://github.com/batuonlukus/supply-chain-management-system" target="_blank" rel="noopener">supply-chain-management-system ↗</a>
+                <em lang="en">Java Swing simulation of a supply chain, producer to factory to market to customer.</em>
+                <em lang="tr">Üreticiden fabrikaya, fabrikadan pazara uzanan tedarik zincirinin Java Swing simülasyonu.</em>
+              </li>
+              <li>
+                <a href="https://github.com/batuonlukus/WordleSolver" target="_blank" rel="noopener">WordleSolver ↗</a>
+                <em lang="en">Wordle solver that picks each guess by minimax, keeping the worst-case candidate set as small as possible.</em>
+                <em lang="tr">Her tahmini minimax ile seçen, en kötü durumdaki aday kümesini olabildiğince küçük tutan Wordle çözücü.</em>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stack" id="stack" aria-labelledby="stack-title">
+      <div class="section-shell">
+        <header class="section-heading">
+          <div class="section-heading-inner">
+            <span class="section-no">03</span>
+            <h2 id="stack-title"><span lang="en">What I work with</span><span lang="tr">Neyle çalışıyorum</span></h2>
+            <p><span lang="en">Grouped by what it is for, not by logo count.</span><span lang="tr">Logo sayısına göre değil, ne işe yaradığına göre gruplandı.</span></p>
+          </div>
+        </header>
+        <div class="section-body">
+          <div class="stack-grid">
+            <div class="stack-cell">
+              <h3><span lang="en">Modelling</span><span lang="tr">Modelleme</span></h3>
+              <p><span lang="en">Logistic regression, LightGBM, WOE binning</span><span lang="tr">Lojistik regresyon, LightGBM, WOE binleme</span></p>
+            </div>
+            <div class="stack-cell">
+              <h3><span lang="en">Evaluation and explainability</span><span lang="tr">Değerlendirme ve açıklanabilirlik</span></h3>
+              <p><span lang="en">AUC-ROC, calibration, reason codes</span><span lang="tr">AUC-ROC, kalibrasyon, gerekçe kodları</span></p>
+            </div>
+            <div class="stack-cell">
+              <h3><span lang="en">Monitoring</span><span lang="tr">İzleme</span></h3>
+              <p><span lang="en">Population and feature drift (PSI), threshold bands, out-of-distribution (OOD) detection</span><span lang="tr">Popülasyon ve değişken kayması (PSI), eşik bantları, dağılım dışı (OOD) tespiti</span></p>
+            </div>
+            <div class="stack-cell">
+              <h3><span lang="en">Data and languages</span><span lang="tr">Veri ve diller</span></h3>
+              <p>Python (pandas, NumPy), Java, SQL Server</p>
+            </div>
+            <div class="stack-cell">
+              <h3 class="nocase">BLOCKCHAIN</h3>
+              <p>Solidity, Hardhat, Ethers.js, Remix</p>
+            </div>
+            <div class="stack-cell">
+              <h3><span lang="en">Tools</span><span lang="tr">Araçlar</span></h3>
+              <p><span lang="en">Git, Jupyter, Matplotlib, locally run language models</span><span lang="tr">Git, Jupyter, Matplotlib, yerelde çalışan dil modelleri</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section education" id="education" aria-labelledby="education-title">
+      <div class="section-shell">
+        <header class="section-heading">
+          <div class="section-heading-inner">
+            <span class="section-no">04</span>
+            <h2 id="education-title"><span lang="en">Education</span><span lang="tr">Eğitim</span></h2>
+            <p><span lang="en">Degree, standing, and the club years that came with it.</span><span lang="tr">Bölüm, durum ve beraberinde gelen kulüp yılları.</span></p>
+          </div>
+        </header>
+        <div class="section-body">
+          <article class="edu-item">
+            <span class="edu-year">2024 → 2028</span>
+            <h3><span lang="en">B.Sc. Artificial Intelligence and Data Engineering</span><span lang="tr">Yapay Zeka ve Veri Mühendisliği lisans</span></h3>
+            <p class="edu-where"><a href="https://www.ozyegin.edu.tr/en" target="_blank" rel="noopener"><span lang="en">Özyeğin University</span><span lang="tr">Özyeğin Üniversitesi</span></a>, İstanbul</p>
+            <ul class="edu-facts">
+              <li><strong>GPA</strong>3.32 / 4.00</li>
+              <li><strong><span lang="en">Expected graduation</span><span lang="tr">Beklenen mezuniyet</span></strong>2028</li>
+              <li><strong><span lang="en">Coursework</span><span lang="tr">Alınan dersler</span></strong><span lang="en">Data Science · Probability and Statistics · Linear Algebra · Data Structures and Algorithms</span><span lang="tr">Veri Bilimi · Olasılık ve İstatistik · Lineer Cebir · Veri Yapıları ve Algoritmalar</span></li>
+              <li><strong><span lang="en">Ahead</span><span lang="tr">Önümdeki dersler</span></strong><span lang="en">Machine Learning · Deep Learning · Large Language Models</span><span lang="tr">Makine Öğrenmesi · Derin Öğrenme · Büyük Dil Modelleri</span></li>
+            </ul>
+          </article>
+
+          <article class="edu-item">
+            <span class="edu-year"><span lang="en">Jun 2024 → Jan 2026</span><span lang="tr">Haz 2024 → Oca 2026</span></span>
+            <h3><span lang="en">Developer and Chain Magazine coordinator</span><span lang="tr">Geliştirici ve Chain Magazine koordinatörü</span></h3>
+            <p class="edu-where"><span lang="en">ÖzÜ Blockchain Club, Özyeğin University</span><span lang="tr">ÖzÜ Blockchain Kulübü, Özyeğin Üniversitesi</span></p>
+            <p>
+              <span lang="en">Contributed to smart contract development, internal tooling and technical workshops for members. Ran Chain Magazine, a weekly research and knowledge-sharing effort on protocols and tokenomics.</span>
+              <span lang="tr">Üyeler için akıllı sözleşme geliştirme, iç araçlar ve teknik atölyelere katkı verdim. Protokoller ve tokenomi üzerine haftalık araştırma ve bilgi paylaşımı yürüten Chain Magazine'i koordine ettim.</span>
+            </p>
+          </article>
+
+          <article class="edu-item">
+            <span class="edu-year">2024</span>
+            <h3><span lang="en">Smart contract bootcamp</span><span lang="tr">Akıllı sözleşme bootcamp'i</span></h3>
+            <p class="edu-where">TriO Blockchain Labs</p>
+            <p><span lang="en">Contract development with Solidity, Hardhat and Ethers.js.</span><span lang="tr">Solidity, Hardhat ve Ethers.js ile sözleşme geliştirme.</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="contact" id="contact">
+    <div class="contact-shell">
+      <div>
+        <span class="section-no">05</span>
+        <h2><span lang="en">Let's build something.</span><span lang="tr">Birlikte bir şey kuralım.</span></h2>
+        <p class="contact-copy">
+          <span lang="en">Get in touch and we can put a project together, or just talk about one. Machine learning, data science, blockchain, or anything sitting between them.</span>
+          <span lang="tr">İletişime geç, birlikte bir proje tasarlayabiliriz ya da sadece konuşabiliriz. Makine öğrenmesi, veri bilimi, blockchain veya aralarında kalan her şey.</span>
+        </p>
+        <p class="contact-threads">
+          <span lang="en">Machine learning</span><span lang="tr">Makine öğrenmesi</span>
+          <span lang="en">Data science</span><span lang="tr">Veri bilimi</span>
+          <span lang="en">Blockchain</span><span lang="tr" class="nocase">BLOCKCHAIN</span>
+        </p>
+      </div>
+      <aside class="card">
+        <div class="card-top">
+          <img src="/images/portrait.jpg" alt="Batu Önlükuş" width="440" height="440" loading="lazy">
+          <div>
+            <strong>Batu Önlükuş</strong>
+            <span lang="en">AI &amp; Data Engineering</span><span lang="tr">Yapay Zeka ve Veri Mühendisliği</span>
+          </div>
+        </div>
+        <div class="card-links">
+          <div class="card-row">
+            <a href="mailto:batu.onlukus@ozu.edu.tr"><span>batu.onlukus [at] ozu.edu.tr</span><span aria-hidden="true">↗</span></a>
+            <button class="card-copy" type="button" data-copy="batu.onlukus@ozu.edu.tr"><span lang="en">Copy</span><span lang="tr">Kopyala</span></button>
+          </div>
+          <div class="card-row">
+            <a href="mailto:batu.onlukus.20@gmail.com"><span>batu.onlukus.20 [at] gmail.com</span><span aria-hidden="true">↗</span></a>
+            <button class="card-copy" type="button" data-copy="batu.onlukus.20@gmail.com"><span lang="en">Copy</span><span lang="tr">Kopyala</span></button>
+          </div>
+          <a href="https://github.com/batuonlukus" target="_blank" rel="noopener"><span>GitHub</span><span aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/in/batuonlukus/" target="_blank" rel="noopener"><span>LinkedIn</span><span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="card-note">İstanbul, Türkiye · 2026</p>
+      </aside>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var header = document.getElementById('site-header');
+      var onScroll = function () { header.classList.toggle('is-stuck', window.scrollY > 40); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      var portrait = document.querySelector('[data-portrait-img]');
+      var portraitStage = document.querySelector('[data-portrait-stage]');
+      var portraitIndex = document.querySelector('[data-portrait-index]');
+      if (portrait && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        var shots = ['/images/portrait-1.jpg', '/images/portrait-2.jpg', '/images/portrait-3.jpg'];
+        var at = 0, busy = false, next = new Image();
+        next.src = shots[1];
+
+        var swap = function () {
+          if (busy) return;
+          busy = true;
+          var to = (at + 1) % shots.length;
+          // hold the incoming frame behind the fading image so the box never goes empty
+          portraitStage.style.backgroundImage = 'url("' + shots[to] + '")';
+          portrait.classList.add('is-out');
+          window.setTimeout(function () {
+            at = to;
+            portrait.src = shots[at];
+            portraitIndex.textContent = '0' + (at + 1);
+            portrait.classList.remove('is-out');
+            window.setTimeout(function () {
+              portraitStage.style.backgroundImage = '';
+              busy = false;
+              next = new Image();
+              next.src = shots[(at + 1) % shots.length];
+            }, 520);
+          }, 520);
+        };
+
+        window.setInterval(function () {
+          if (next.complete) swap();
+          else next.addEventListener('load', swap, { once: true });
+        }, 6500);
+      }
+
+      var TITLES = {
+        en: 'Batu Önlükuş · Data Science',
+        tr: 'Batu Önlükuş · Veri Bilimi'
+      };
+      var DESCRIPTIONS = {
+        en: 'Batu Önlükuş is an AI and Data Engineering student at Özyeğin University working across machine learning, data science and blockchain, currently at Cloudpeer on the imza.io platform.',
+        tr: 'Batu Önlükuş, Özyeğin Üniversitesi Yapay Zeka ve Veri Mühendisliği öğrencisi. Makine öğrenmesi, veri bilimi ve blockchain üzerine çalışıyor, şu anda Cloudpeer\'da imza.io platformunda.'
+      };
+      var buttons = document.querySelectorAll('[data-set-lang]');
+      var meta = document.querySelector('meta[name="description"]');
+
+      function apply(lang) {
+        document.documentElement.lang = lang;
+        document.documentElement.setAttribute('data-lang', lang);
+        document.title = TITLES[lang];
+        if (meta) meta.setAttribute('content', DESCRIPTIONS[lang]);
+        buttons.forEach(function (b) {
+          b.setAttribute('aria-pressed', String(b.dataset.setLang === lang));
+        });
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+      }
+
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () { apply(b.dataset.setLang); });
+      });
+
+      apply(document.documentElement.getAttribute('data-lang') || 'en');
+
+      // Both demos write numbers into the page, and the page is bilingual, so
+      // every generated string lands in an en/tr pair the language switch can
+      // hide. Turkish gets its own decimal comma and leading per-cent sign.
+      function say(el, en, tr) {
+        if (el.dataset.bi !== '1') {
+          el.textContent = '';
+          ['en', 'tr'].forEach(function (l) {
+            var s = document.createElement('span');
+            s.setAttribute('lang', l);
+            el.appendChild(s);
+          });
+          el.dataset.bi = '1';
+        }
+        el.children[0].textContent = en;
+        el.children[1].textContent = tr;
+      }
+      function num(v, d) { var s = v.toFixed(d); return [s, s.replace('.', ',')]; }
+      function pct(v, d) { var s = (v * 100).toFixed(d); return [s + '%', '%' + s.replace('.', ',')]; }
+
+      // ---- scoring demo ----
+      // A textbook scorecard chain: each input falls in a weight-of-evidence
+      // bin, the bins sum into a logit, the logit is a probability, and the
+      // score and grade band are read off that. Every number below (weights,
+      // bins, base rate, bands) is invented for this page and belongs to no
+      // real portfolio or model.
+      var scoreEl = document.querySelector('[data-score]');
+      if (scoreEl) {
+        var FEATURES = [
+          { key: 'cheque', beta: 0.47, woe: [0.62, 0.10, -0.35, -0.95, -1.60],
+            label: ['Unpaid cheques', 'Karşılıksız çek'],
+            vals: [['0', '0'], ['1', '1'], ['2', '2'], ['3-5', '3-5'], ['6+', '6+']] },
+          { key: 'debt', beta: 0.38, woe: [0.55, 0.15, -0.30, -0.80, -1.25],
+            label: ['Debt to equity', 'Borçlanma oranı'],
+            vals: [['0.5', '0,5'], ['1.1', '1,1'], ['2.0', '2,0'], ['3.2', '3,2'], ['5.0', '5,0']] },
+          { key: 'liq', beta: 0.34, woe: [0.48, 0.12, -0.25, -0.62, -1.05],
+            label: ['Current ratio', 'Cari oran'],
+            vals: [['2.2', '2,2'], ['1.5', '1,5'], ['1.1', '1,1'], ['0.8', '0,8'], ['0.6', '0,6']] },
+          { key: 'age', beta: 0.24, woe: [0.35, 0.15, -0.10, -0.45, -0.80],
+            label: ['Company age, years', 'Firma yaşı, yıl'],
+            vals: [['14', '14'], ['9', '9'], ['5', '5'], ['3', '3'], ['1', '1']] }
+        ];
+        var TYPICAL_BIN = 1;                      // the middle bin every reason code compares against
+        var FACTOR = 40 / Math.LN2;               // 40 points to double the odds
+        var BASE_LOGIT = Math.log(0.07 / 0.93);   // the made-up base rate this example runs on
+        var OFFSET = 600 + FACTOR * BASE_LOGIT;   // the typical profile lands on 600 points
+        var ALPHA = BASE_LOGIT + FEATURES.reduce(function (s, f) { return s + f.beta * f.woe[TYPICAL_BIN]; }, 0);
+        var GRADES = [[0.05, 'A', 'ok'], [0.08, 'B', 'ok'], [0.14, 'C', 'watch'], [0.25, 'D', 'alarm'], [1, 'E', 'alarm']];
+        var CLEAN = ['No input is pulling the score down: every one sits at or above the portfolio typical.',
+                     'Skoru aşağı çeken girdi yok: hepsi portföy tipiğinde ya da üstünde.'];
+
+        var inputs = {}, outs = {};
+        scoreEl.querySelectorAll('[data-f]').forEach(function (el) { inputs[el.dataset.f] = el; });
+        scoreEl.querySelectorAll('[data-out]').forEach(function (el) { outs[el.dataset.out] = el; });
+        var elPd = scoreEl.querySelector('[data-pd]');
+        var elPoints = scoreEl.querySelector('[data-points]');
+        var elGrade = scoreEl.querySelector('[data-grade]');
+        var elWhy = scoreEl.querySelector('[data-why]');
+
+        var renderScore = function () {
+          var sum = 0, down = [];
+          FEATURES.forEach(function (f) {
+            var i = Number(inputs[f.key].value);
+            say(outs[f.key], f.vals[i][0], f.vals[i][1]);
+            sum += f.beta * f.woe[i];
+            var pts = FACTOR * f.beta * (f.woe[i] - f.woe[TYPICAL_BIN]);
+            if (pts < -0.5) down.push({ f: f, i: i, pts: pts });
+          });
+
+          var logit = ALPHA - sum;
+          var pd = 1 / (1 + Math.exp(-logit));
+          var p = pct(pd, 1);
+          say(elPd, p[0], p[1]);
+          elPoints.textContent = String(Math.round(OFFSET - FACTOR * logit));
+          var g = GRADES.find(function (row) { return pd <= row[0]; });
+          elGrade.textContent = g[1];
+          elGrade.setAttribute('data-state', g[2]);
+
+          elWhy.textContent = '';
+          down.sort(function (a, b) { return a.pts - b.pts; });
+          if (!down.length) {
+            var li = document.createElement('li');
+            li.className = 'is-clean';
+            var em = document.createElement('em');
+            say(em, CLEAN[0], CLEAN[1]);
+            li.appendChild(em);
+            elWhy.appendChild(li);
+            return;
+          }
+          var worst = down[0].pts;
+          down.slice(0, 3).forEach(function (c) {
+            var li = document.createElement('li');
+            var bar = document.createElement('i');
+            bar.style.width = Math.max(14, Math.round(100 * c.pts / worst)) + '%';
+            var txt = document.createElement('span');
+            say(txt,
+              c.f.label[0] + ' ' + c.f.vals[c.i][0] + ' · typical ' + c.f.vals[TYPICAL_BIN][0],
+              c.f.label[1] + ' ' + c.f.vals[c.i][1] + ' · tipik ' + c.f.vals[TYPICAL_BIN][1]);
+            var pts = document.createElement('b');
+            say(pts, Math.round(c.pts) + ' pts', Math.round(c.pts) + ' puan');
+            li.appendChild(bar);
+            li.appendChild(txt);
+            li.appendChild(pts);
+            elWhy.appendChild(li);
+          });
+        };
+
+        Object.keys(inputs).forEach(function (k) { inputs[k].addEventListener('input', renderScore); });
+        renderScore();
+      }
+
+      // ---- monitoring demo ----
+      // A frozen reference period and one incoming window, read by two signals
+      // that fail in different ways: PSI sees one variable at a time, the
+      // Mahalanobis boundary sees the two together. The correlation-break
+      // scenario is the case only the second one catches. Synthetic throughout.
+      var driftEl = document.querySelector('[data-drift]');
+      if (driftEl) {
+        var REF_N = 520, WIN_N = 200, NBIN = 10, RHO = 0.72, TRIALS = 40;
+        var W = 132, H = 104, NS = 'http://www.w3.org/2000/svg';
+
+        var rng = function (seed) {
+          return function () {
+            seed = seed + 0x6D2B79F5 | 0;
+            var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+            t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+            return ((t ^ t >>> 14) >>> 0) / 4294967296;
+          };
+        };
+        var gauss = function (r) { return Math.sqrt(-2 * Math.log(1 - r())) * Math.cos(6.283185307 * r()); };
+        var sample = function (r, n, scene) {
+          var out = [], root = Math.sqrt(1 - RHO * RHO);
+          for (var i = 0; i < n; i++) {
+            var a = gauss(r), b = gauss(r), x = a, y = RHO * a + root * b;
+            // mass shift slides along the axis the two variables share, so the
+            // joint structure survives it; the tail throws part of the window
+            // off that axis; the break keeps both marginals and cuts the link
+            if (scene === 'mass') { x += 0.78; y += RHO * 0.78; }
+            else if (scene === 'tail' && r() < 0.25) { x += 2.9; y -= 1.4; }
+            else if (scene === 'corr') { y = b; }
+            out.push([x, y]);
+          }
+          return out;
+        };
+        var asc = function (a, b) { return a - b; };
+        var pctl = function (v, q) { var s = v.slice().sort(asc); return s[Math.min(s.length - 1, Math.floor(q * s.length))]; };
+
+        var REF = sample(rng(20260805), REF_N, 'calm');
+        var xs = REF.map(function (p) { return p[0]; });
+        var ys = REF.map(function (p) { return p[1]; });
+        var avg = function (v) { return v.reduce(function (s, n) { return s + n; }, 0) / v.length; };
+        var mx = avg(xs), my = avg(ys);
+        var dev = function (v, m) { return Math.sqrt(avg(v.map(function (n) { return (n - m) * (n - m); }))); };
+        var sx = dev(xs, mx), sy = dev(ys, my);
+        var rr = avg(REF.map(function (p) { return (p[0] - mx) * (p[1] - my); })) / (sx * sy);
+
+        var d2 = function (p) {
+          var a = (p[0] - mx) / sx, b = (p[1] - my) / sy;
+          return (a * a - 2 * rr * a * b + b * b) / (1 - rr * rr);
+        };
+        var THR = pctl(REF.map(d2), 0.99);
+
+        // PSI bins are the reference's own deciles, so its shares are flat at
+        // 0.1 and any bar leaving that line is the window moving
+        var sorted = xs.slice().sort(asc), EDGES = [];
+        for (var i = 1; i < NBIN; i++) EDGES.push(sorted[Math.floor(i * REF_N / NBIN)]);
+        var shares = function (v) {
+          var c = new Array(NBIN).fill(0);
+          v.forEach(function (n) { var k = 0; while (k < EDGES.length && n > EDGES[k]) k++; c[k]++; });
+          return c.map(function (n) { return n / v.length; });
+        };
+        var REF_SHARE = shares(xs);
+        var psiOf = function (cur) {
+          var s = 0;
+          for (var i = 0; i < NBIN; i++) {
+            var a = Math.max(cur[i], 5e-4), e = Math.max(REF_SHARE[i], 5e-4);
+            s += (a - e) * Math.log(a / e);
+          }
+          return s;
+        };
+
+        // what both signals do when nothing is wrong: resample the reference
+        // against itself and keep the 95th percentile as the noise band
+        var bandR = rng(7717), psis = [], oods = [];
+        for (var t = 0; t < TRIALS; t++) {
+          var draw = [], hits = 0;
+          for (var k = 0; k < WIN_N; k++) {
+            var q = REF[Math.floor(bandR() * REF_N)];
+            draw.push(q[0]);
+            if (d2(q) > THR) hits++;
+          }
+          psis.push(psiOf(shares(draw)));
+          oods.push(hits / WIN_N);
+        }
+        var PSI_BAND = pctl(psis, 0.95), OOD_BAND = pctl(oods, 0.95);
+
+        var X0 = -3.3, X1 = 4.5, Y0 = -3.5, Y1 = 3.5;
+        var px = function (x) { return (x - X0) / (X1 - X0) * W; };
+        var py = function (y) { return H - (y - Y0) / (Y1 - Y0) * H; };
+        var dots = function (pts) {
+          var d = '';
+          pts.forEach(function (p) { d += 'M' + px(p[0]).toFixed(1) + ' ' + py(p[1]).toFixed(1) + 'h.01'; });
+          return d;
+        };
+        var elScRef = driftEl.querySelector('[data-sc-ref]');
+        var elScRing = driftEl.querySelector('[data-sc-ring]');
+        var elScCur = driftEl.querySelector('[data-sc-cur]');
+        var elScOod = driftEl.querySelector('[data-sc-ood]');
+        var elBars = driftEl.querySelector('[data-hs-bars]');
+        var elHsRef = driftEl.querySelector('[data-hs-ref]');
+        elScRef.setAttribute('d', dots(REF));
+
+        var ring = '', kk = Math.sqrt(THR), rootc = Math.sqrt(1 - rr * rr);
+        for (var a = 0; a <= 72; a++) {
+          var th = a / 72 * 6.283185307;
+          var ex = mx + kk * sx * Math.cos(th);
+          var ey = my + kk * sy * (rr * Math.cos(th) + rootc * Math.sin(th));
+          ring += (a ? 'L' : 'M') + px(ex).toFixed(1) + ' ' + py(ey).toFixed(1);
+        }
+        elScRing.setAttribute('d', ring + 'Z');
+
+        // the reference deciles hold a tenth of the mass each, so the reference
+        // is one level rather than a shape: drawn as the same dashed red the
+        // scatter uses for its boundary, over the bars instead of through them
+        var TOP = 0.34;
+        var barY = function (p) { return H - Math.min(p / TOP, 1) * (H - 3); };
+        var bw = W / NBIN, bars = [];
+        for (var i = 0; i < NBIN; i++) {
+          var rect = document.createElementNS(NS, 'rect');
+          rect.setAttribute('class', 'hist-cur');
+          rect.setAttribute('x', (i * bw + 1.3).toFixed(1));
+          rect.setAttribute('width', (bw - 2.6).toFixed(1));
+          elBars.appendChild(rect);
+          bars.push(rect);
+        }
+        elHsRef.setAttribute('d', 'M0 ' + barY(REF_SHARE[0]).toFixed(1) + 'L' + W + ' ' + barY(REF_SHARE[0]).toFixed(1));
+
+        var NOTES = {
+          calm: ['Nothing injected: the window comes from the same process as the reference.',
+                 'Hiçbir şey enjekte edilmedi: pencere referansla aynı süreçten geliyor.'],
+          mass: ['The whole window slides along the axis the two variables share.',
+                 'Pencerenin tamamı iki değişkenin paylaştığı eksen boyunca kayıyor.'],
+          tail: ['A quarter of the window is pushed into the sparse tail.',
+                 'Pencerenin dörtte biri seyrek kuyruğa itiliyor.'],
+          corr: ['Both variables keep their own distribution. Only the link between them is cut.',
+                 'İki değişken de kendi dağılımını koruyor. Kırılan tek şey aralarındaki bağ.']
+        };
+        var CHIP = { ok: ['OK', 'OK'], watch: ['Watch', 'İzle'], alarm: ['Alarm', 'Alarm'] };
+
+        var elNote = driftEl.querySelector('[data-note]');
+        var elPsi = driftEl.querySelector('[data-psi]');
+        var elPsiBand = driftEl.querySelector('[data-psi-band]');
+        var elPsiChip = driftEl.querySelector('[data-psi-chip]');
+        var elOod = driftEl.querySelector('[data-ood]');
+        var elOodBand = driftEl.querySelector('[data-ood-band]');
+        var elOodChip = driftEl.querySelector('[data-ood-chip]');
+        var scene = 'calm', seed = 4021;
+
+        var setChip = function (el, state) {
+          el.setAttribute('data-state', state);
+          say(el, CHIP[state][0], CHIP[state][1]);
+        };
+
+        var renderDrift = function () {
+          var win = sample(rng(seed), WIN_N, scene);
+          var inside = [], out = [];
+          win.forEach(function (p) { (d2(p) > THR ? out : inside).push(p); });
+          elScCur.setAttribute('d', dots(inside));
+          elScOod.setAttribute('d', dots(out));
+
+          var cur = shares(win.map(function (p) { return p[0]; }));
+          for (var i = 0; i < NBIN; i++) {
+            var y = barY(cur[i]);
+            bars[i].setAttribute('y', y.toFixed(1));
+            bars[i].setAttribute('height', Math.max(H - y, 0).toFixed(1));
+          }
+
+          var psi = psiOf(cur), ood = out.length / WIN_N;
+          // two gates: the conventional PSI thresholds, which are public
+          // convention, and the band measured on the reference itself
+          var psiState = psi > PSI_BAND ? (psi >= 0.25 ? 'alarm' : 'watch') : (psi >= 0.10 ? 'watch' : 'ok');
+          var oodState = ood > OOD_BAND ? (ood >= 0.05 ? 'alarm' : 'watch') : 'ok';
+
+          var v = num(psi, 3);
+          say(elPsi, v[0], v[1]);
+          v = num(PSI_BAND, 3);
+          say(elPsiBand, v[0], v[1]);
+          setChip(elPsiChip, psiState);
+          v = pct(ood, 1);
+          say(elOod, v[0], v[1]);
+          v = pct(OOD_BAND, 1);
+          say(elOodBand, v[0], v[1]);
+          setChip(elOodChip, oodState);
+          say(elNote, NOTES[scene][0], NOTES[scene][1]);
+        };
+
+        driftEl.querySelectorAll('[data-scene]').forEach(function (b) {
+          b.addEventListener('click', function () {
+            scene = b.dataset.scene;
+            driftEl.querySelectorAll('[data-scene]').forEach(function (o) {
+              o.setAttribute('aria-pressed', String(o === b));
+            });
+            renderDrift();
+          });
+        });
+        renderDrift();
+      }
+
+      // ---- mark the section the reader is in ----
+      var spy = [];
+      document.querySelectorAll('.header-nav a[href^="#"]').forEach(function (a) {
+        var target = document.querySelector(a.getAttribute('href'));
+        if (target) spy.push({ a: a, el: target });
+      });
+      if (spy.length && 'IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            spy.forEach(function (s) { s.a.classList.toggle('is-current', s.el === entry.target); });
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        spy.forEach(function (s) { io.observe(s.el); });
+      }
+
+      // ---- copy an address without launching a mail client ----
+      document.querySelectorAll('[data-copy]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (!navigator.clipboard) return;
+          navigator.clipboard.writeText(btn.getAttribute('data-copy')).then(function () {
+            btn.setAttribute('data-done', '1');
+            btn.children[0].textContent = 'Copied';
+            btn.children[1].textContent = 'Kopyalandı';
+            window.setTimeout(function () {
+              btn.removeAttribute('data-done');
+              btn.children[0].textContent = 'Copy';
+              btn.children[1].textContent = 'Kopyala';
+            }, 1400);
+          }, function () {});
+        });
+      });
+
+      // ---- l toggles language, unless a control has focus ----
+      document.addEventListener('keydown', function (e) {
+        if (e.key !== 'l' && e.key !== 'L') return;
+        if (e.metaKey || e.ctrlKey || e.altKey) return;
+        var t = e.target;
+        if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+        apply(document.documentElement.getAttribute('data-lang') === 'tr' ? 'en' : 'tr');
+      });
+    })();
+  </script>
+</body>
+</html>
