@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Batu Önlükuş · Data Science</title>
-  <meta name="description" content="Batu Önlükuş is an AI and Data Engineering student at Özyeğin University working across machine learning, data science and blockchain, currently at Cloudpeer on the imza.io platform.">
+  <meta name="description" content="Batu Önlükuş is an AI and Data Engineering student at Özyeğin University working across machine learning, data science and blockchain, currently at Cloudpeer building Jetty, an AI-powered help layer inside Jetimza.">
   <meta name="theme-color" content="#d9e4d5">
   <link rel="canonical" href="https://batuonlukus.github.io/">
   <link rel="alternate" hreflang="en" href="https://batuonlukus.github.io/?lang=en">
@@ -16,7 +16,7 @@
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://batuonlukus.github.io/">
   <meta property="og:title" content="Batu Önlükuş · Data Science">
-  <meta property="og:description" content="AI and Data Engineering student at Özyeğin University. Machine learning, data science and blockchain, currently at Cloudpeer on imza.io.">
+  <meta property="og:description" content="AI and Data Engineering student at Özyeğin University. Machine learning, data science and blockchain, currently at Cloudpeer building Jetty, an AI-powered help layer inside Jetimza.">
   <meta property="og:image" content="https://batuonlukus.github.io/images/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -43,7 +43,7 @@
       ],
       "worksFor": { "@type": "Organization", "name": "Cloudpeer Global Teknoloji A.Ş." },
       "alumniOf": { "@type": "CollegeOrUniversity", "name": "Özyeğin University" },
-      "knowsAbout": ["Machine learning", "Data science", "Blockchain", "Credit risk scoring", "Model monitoring", "Drift detection"],
+      "knowsAbout": ["Machine learning", "Data science", "Blockchain", "Large language models", "Credit risk scoring", "Model monitoring", "Drift detection"],
       "address": { "@type": "PostalAddress", "addressLocality": "Istanbul", "addressCountry": "TR" },
       "sameAs": [
         "https://github.com/batuonlukus",
@@ -236,6 +236,10 @@
     .work-type { color: var(--redink); font: 500 .6rem/1.6 var(--mono); letter-spacing: .085em; text-transform: uppercase; }
     a.work-row:hover .work-type { color: var(--ink); }
     .work-row h3 { margin: -.3rem 0 .5rem; font: 500 clamp(1.35rem, 2.05vw, 2.05rem)/1.08 var(--display); letter-spacing: -.015em; }
+    /* Jetty publishes a full-colour mark on transparency, so it sits on the page as drawn */
+    .work-logo { margin: 0 0 .7rem; }
+    .work-logo img { display: block; width: auto; height: 30px; object-fit: contain; object-position: left; }
+    .work-logo + h3 { margin-top: 0; }
     .work-row p { max-width: 64ch; margin: 0; font-size: .93rem; }
     .work-mark { padding-top: .2rem; color: var(--redink); font: 500 .58rem/1.4 var(--mono); letter-spacing: .08em; text-align: right; text-transform: uppercase; }
     a.work-row .work-mark { padding-top: 0; font: 400 1.6rem/1 var(--display); }
@@ -251,6 +255,7 @@
     .stack-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); }
     .stack-cell { padding: 1.1rem 1.15rem 1.3rem; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
     .stack-cell:nth-child(4n+2), .stack-cell:nth-child(4n+3) { background: rgba(217, 228, 213, .38); }
+    .stack-cell:last-child:nth-child(odd) { grid-column: 1 / -1; }
     .stack-cell h3 { margin: 0 0 .55rem; color: var(--redink); font: 500 .6rem/1.4 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
     .stack-cell p { margin: 0; font-size: .93rem; line-height: 1.55; }
 
@@ -449,8 +454,8 @@
         <p class="kicker"><span lang="en">Machine learning · Data science · Blockchain</span><span lang="tr" class="nocase">MAKİNE ÖĞRENMESİ · VERİ BİLİMİ · BLOCKCHAIN</span></p>
         <h1><span>Batu</span> <span class="surname">Önlükuş</span></h1>
         <p class="hero-lead">
-          <span lang="en">Third-year AI and Data Engineering student at Özyeğin University. I work across machine learning, data science and blockchain. Right now I am at <a href="https://www.linkedin.com/company/cloudpeer/" target="_blank" rel="noopener">Cloudpeer</a>, building the blockchain and AI integration for the <a href="https://imza.io" target="_blank" rel="noopener">imza.io</a> platform.</span>
-          <span lang="tr">Özyeğin Üniversitesi Yapay Zeka ve Veri Mühendisliği 3. sınıf öğrencisiyim. Makine öğrenmesi, veri bilimi ve blockchain üzerine yoğunlaşıyorum. Şu anda <a href="https://www.linkedin.com/company/cloudpeer/" target="_blank" rel="noopener">Cloudpeer</a>'da <a href="https://imza.io" target="_blank" rel="noopener">imza.io</a> platformunun blockchain ve yapay zeka entegrasyonunu yapıyorum.</span>
+          <span lang="en">Third-year AI and Data Engineering student at Özyeğin University. I work across machine learning, data science and blockchain. Right now I am at <a href="https://www.linkedin.com/company/cloudpeer/" target="_blank" rel="noopener">Cloudpeer</a>, building Jetty, the AI-powered help layer that runs inside Jetimza.</span>
+          <span lang="tr">Özyeğin Üniversitesi Yapay Zeka ve Veri Mühendisliği 3. sınıf öğrencisiyim. Makine öğrenmesi, veri bilimi ve blockchain üzerine yoğunlaşıyorum. Şu anda <a href="https://www.linkedin.com/company/cloudpeer/" target="_blank" rel="noopener">Cloudpeer</a>'da, Jetimza içinde çalışacak yapay zeka destekli yardım katmanı Jetty'yi kuruyorum.</span>
         </p>
         <p class="hero-now">
           <span lang="en">Part-time from August 2026, alongside the degree.</span>
@@ -500,8 +505,8 @@
             </tr>
             <tr>
               <td class="col-date">2026-08-10</td>
-              <td><span lang="en">Machine learning and blockchain, part-time</span><span lang="tr">Makine öğrenmesi ve blockchain, yarı zamanlı</span></td>
-              <td class="col-ref nocase">imza.io</td>
+              <td><span lang="en">Jetty, AI-powered help layer, part-time</span><span lang="tr">Jetty, yapay zeka destekli yardım katmanı, yarı zamanlı</span></td>
+              <td class="col-ref nocase">Jetimza</td>
             </tr>
             <tr>
               <td class="col-date">2026-09</td>
@@ -555,8 +560,8 @@
                 <h3><a href="https://www.linkedin.com/company/cloudpeer/" target="_blank" rel="noopener">Cloudpeer Global Teknoloji</a></h3>
                 <div class="org org-ink"><img src="/images/logos/cloudpeer.svg" alt="Cloudpeer" width="615" height="234" loading="lazy"></div>
                 <p>
-                  <span lang="en">Started as a summer intern on IDES, the credit-risk and guarantee platform Cloudpeer supports for İGE. That work ran from exploratory analysis through to a machine learning scoring model and a monitoring layer for the company applications feeding it. Since August I have been on <a href="https://imza.io" target="_blank" rel="noopener">imza.io</a> instead, the company's digital signature and mobile identity platform, building its blockchain and AI integration part-time alongside the degree.</span>
-                  <span lang="tr">Cloudpeer'ın İGE için desteklediği kredi riski ve kefalet platformu IDES üzerinde yaz stajyeri olarak başladım. O iş keşifsel analizle açıldı, makine öğrenmesi tabanlı bir skorlama modeline ve onu besleyen firma başvurularını izleyen bir katmana uzandı. Ağustos'tan beri şirketin dijital imza ve mobil kimlik platformu <a href="https://imza.io" target="_blank" rel="noopener">imza.io</a> tarafındayım, platformun blockchain ve yapay zeka entegrasyonunu okulla birlikte yarı zamanlı kuruyorum.</span>
+                  <span lang="en">Started as a summer intern on IDES, the credit-risk and guarantee platform Cloudpeer supports for İGE. That work ran from exploratory analysis through to a machine learning scoring model and a monitoring layer for the company applications feeding it. Since August I have been on Jetimza instead, the company's digital signature product, building Jetty, its AI-powered help layer, part-time alongside the degree.</span>
+                  <span lang="tr">Cloudpeer'ın İGE için desteklediği kredi riski ve kefalet platformu IDES üzerinde yaz stajyeri olarak başladım. O iş keşifsel analizle açıldı, makine öğrenmesi tabanlı bir skorlama modeline ve onu besleyen firma başvurularını izleyen bir katmana uzandı. Ağustos'tan beri Jetimza tarafındayım; şirketin dijital imza ürünü içinde çalışacak yapay zeka destekli yardım katmanı Jetty'yi okulla birlikte yarı zamanlı kuruyorum.</span>
                 </p>
               </div>
             </li>
@@ -598,6 +603,19 @@
         </header>
         <div class="section-body">
           <div class="work-list">
+            <article class="work-row">
+              <span class="work-type"><span lang="en">Cloudpeer · Artificial intelligence</span><span lang="tr">Cloudpeer · Yapay zeka</span></span>
+              <div>
+                <div class="work-logo"><img src="/images/logos/jetty.png" alt="Jetty" width="490" height="160" loading="lazy"></div>
+                <h3><span lang="en">A help layer running inside Jetimza</span><span lang="tr">Jetimza içinde çalışan yardım katmanı</span></h3>
+                <p>
+                  <span lang="en">A layer that reads a question asked in the user's own words and routes it to the right place in the product. It does not write free text: it picks from approved help content, falls back to a safe answer instead of guessing when it is not sure, and turns down out-of-scope and malicious requests up front. Accuracy is measured again after every change against a hand-written synthetic evaluation set.</span>
+                  <span lang="tr">Kullanıcının kendi cümleleriyle sorduğu soruyu anlayıp ürünün doğru yerine yönlendiren bir katman. Serbest metin üretmiyor: yalnız onaylı yardım içeriği arasından seçim yapıyor, emin olamadığında hüküm vermek yerine güvenli bir cevaba düşüyor, kapsam dışı ve kötü niyetli istekleri baştan reddediyor. Doğruluğu elle yazılmış sentetik bir değerlendirme setiyle her değişiklikten sonra yeniden ölçülüyor.</span>
+                </p>
+              </div>
+              <span class="work-mark"><span lang="en">Internal</span><span lang="tr">Kurum içi</span></span>
+            </article>
+
             <article class="work-row">
               <span class="work-type"><span lang="en">Cloudpeer · Credit risk</span><span lang="tr">Cloudpeer · Kredi riski</span></span>
               <div>
@@ -737,18 +755,6 @@
               <span class="work-mark"><span lang="en">Internal</span><span lang="tr">Kurum içi</span></span>
             </article>
 
-            <article class="work-row">
-              <span class="work-type"><span lang="en">Cloudpeer · Tooling</span><span lang="tr">Cloudpeer · Araç</span></span>
-              <div>
-                <h3><span lang="en">Turkish meeting transcription, tuned and capped</span><span lang="tr">Türkçe toplantı transkripsiyonu, ayarlandı ve sınırlandı</span></h3>
-                <p>
-                  <span lang="en">A desktop transcription tool on Whisper for Turkish meeting audio. An initial prompt teaches the model the two things it kept getting wrong: the names of the people in the room and the fintech vocabulary they use. It also has a brake on the repetition loops Whisper falls into. Benchmarking showed the vocabulary list stops helping past a certain size and starts making things worse, so it ships with a cap.</span>
-                  <span lang="tr">Türkçe toplantı sesi için Whisper üzerine kurulmuş bir masaüstü transkripsiyon aracı. Başlangıç prompt'u modele sürekli yanlış yazdığı iki şeyi öğretiyor: odadaki insanların isimleri ve kullandıkları fintech terimleri. Whisper'ın girdiği tekrar döngülerine de fren kondu. Benchmark, sözlüğün belli bir boyuttan sonra faydayı bırakıp işi bozmaya başladığını gösterdi, o yüzden sınırla birlikte çıktı.</span>
-                </p>
-              </div>
-              <span class="work-mark"><span lang="en">Internal</span><span lang="tr">Kurum içi</span></span>
-            </article>
-
             <a class="work-row" href="https://github.com/batuonlukus/InflationResearchStudy" target="_blank" rel="noopener">
               <span class="work-type"><span lang="en">Research · Data collection</span><span lang="tr">Araştırma · Veri toplama</span></span>
               <div>
@@ -829,6 +835,10 @@
               <p><span lang="en">Population and feature drift (PSI), threshold bands, out-of-distribution (OOD) detection</span><span lang="tr">Popülasyon ve değişken kayması (PSI), eşik bantları, dağılım dışı (OOD) tespiti</span></p>
             </div>
             <div class="stack-cell">
+              <h3><span lang="en">Language models</span><span lang="tr">Dil modelleri</span></h3>
+              <p><span lang="en">Retrieval and ranking, evaluation set design, instruction design, safety filtering, abstaining under uncertainty</span><span lang="tr">Erişim ve sıralama, değerlendirme seti tasarımı, talimat tasarımı, güvenlik süzgeci, belirsizlikte hüküm vermeme</span></p>
+            </div>
+            <div class="stack-cell">
               <h3><span lang="en">Data and languages</span><span lang="tr">Veri ve diller</span></h3>
               <p>Python (pandas, NumPy), Java, SQL Server</p>
             </div>
@@ -838,7 +848,7 @@
             </div>
             <div class="stack-cell">
               <h3><span lang="en">Tools</span><span lang="tr">Araçlar</span></h3>
-              <p><span lang="en">Git, Jupyter, Matplotlib, locally run language models</span><span lang="tr">Git, Jupyter, Matplotlib, yerelde çalışan dil modelleri</span></p>
+              <p><span lang="en">Git, Jupyter, Matplotlib, locally run models</span><span lang="tr">Git, Jupyter, Matplotlib, yerelde çalışan modeller</span></p>
             </div>
           </div>
         </div>
@@ -975,8 +985,8 @@
         tr: 'Batu Önlükuş · Veri Bilimi'
       };
       var DESCRIPTIONS = {
-        en: 'Batu Önlükuş is an AI and Data Engineering student at Özyeğin University working across machine learning, data science and blockchain, currently at Cloudpeer on the imza.io platform.',
-        tr: 'Batu Önlükuş, Özyeğin Üniversitesi Yapay Zeka ve Veri Mühendisliği öğrencisi. Makine öğrenmesi, veri bilimi ve blockchain üzerine çalışıyor, şu anda Cloudpeer\'da imza.io platformunda.'
+        en: 'Batu Önlükuş is an AI and Data Engineering student at Özyeğin University working across machine learning, data science and blockchain, currently at Cloudpeer building Jetty, an AI-powered help layer inside Jetimza.',
+        tr: 'Batu Önlükuş, Özyeğin Üniversitesi Yapay Zeka ve Veri Mühendisliği öğrencisi. Makine öğrenmesi, veri bilimi ve blockchain üzerine çalışıyor, şu anda Cloudpeer\'da Jetimza içinde çalışan yapay zeka destekli yardım katmanı Jetty\'yi kuruyor.'
       };
       var buttons = document.querySelectorAll('[data-set-lang]');
       var meta = document.querySelector('meta[name="description"]');
